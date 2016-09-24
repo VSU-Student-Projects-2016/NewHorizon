@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var backImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadImage(url: "http://diadlo.dyndns.org/NewHorizon/images/first.jpg")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadImage(url : String) {
+        do {
+            let urlData = URL(string: url)
+            let data = try Data(contentsOf: urlData!)
+            backImage.image = UIImage(data: data)
+        } catch {
+            print("Can't set image")
+        }
     }
-
 
 }
 
