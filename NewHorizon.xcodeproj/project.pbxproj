@@ -14,6 +14,8 @@
 		AEA9EE341D96893D00D6FC68 /* NewHorizon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEA9EE321D96893D00D6FC68 /* NewHorizon.xcdatamodeld */; };
 		AEA9EE361D96893D00D6FC68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEA9EE351D96893D00D6FC68 /* Assets.xcassets */; };
 		AEA9EE391D96893D00D6FC68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA9EE371D96893D00D6FC68 /* LaunchScreen.storyboard */; };
+		AEF270AD1D96AD03008886AE /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF270AC1D96AD03008886AE /* WebServer.swift */; };
+		AEF270AF1D96AF61008886AE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF270AE1D96AF61008886AE /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AEA9EE351D96893D00D6FC68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEA9EE381D96893D00D6FC68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEA9EE3A1D96893D00D6FC68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF270AC1D96AD03008886AE /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
+		AEF270AE1D96AF61008886AE /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				AEA9EE371D96893D00D6FC68 /* LaunchScreen.storyboard */,
 				AEA9EE3A1D96893D00D6FC68 /* Info.plist */,
 				AEA9EE321D96893D00D6FC68 /* NewHorizon.xcdatamodeld */,
+				AEF270AC1D96AD03008886AE /* WebServer.swift */,
+				AEF270AE1D96AF61008886AE /* Question.swift */,
 			);
 			path = NewHorizon;
 			sourceTree = "<group>";
@@ -215,9 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF270AF1D96AF61008886AE /* Question.swift in Sources */,
 				AEA9EE2E1D96893D00D6FC68 /* ViewController.swift in Sources */,
 				AEA9EE2C1D96893D00D6FC68 /* AppDelegate.swift in Sources */,
 				AEA9EE341D96893D00D6FC68 /* NewHorizon.xcdatamodeld in Sources */,
+				AEF270AD1D96AD03008886AE /* WebServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

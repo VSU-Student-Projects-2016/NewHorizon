@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadImage(url: "http://diadlo.dyndns.org/NewHorizon/images/first.jpg")
+        WebServer.getQuestion(question: 1) { question in
+            self.loadImage(url: question.image)
+        }
     }
 
     func loadImage(url : String) {
