@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServer.getQuestion(question: 1) { question in
+        WebServer.getQuestion() { question in
             self.loadImage(url: question.image)
         }
     }

@@ -9,8 +9,8 @@
 import Alamofire
 
 class WebServer {
-    static func getQuestion(question : Int, onLoad : @escaping (_ question : Question) -> Void) {
-        let urlString = "http://diadlo.dyndns.org/NewHorizon/question.php?q=" + String(question)
+    static func getQuestion(onLoad : @escaping (_ question : Question) -> Void) {
+        let urlString = "http://diadlo.dyndns.org:8888/HorizonQuiz"
         Alamofire.request(urlString).responseJSON { response in
             switch (response.result) {
             case .success(let JSON):
