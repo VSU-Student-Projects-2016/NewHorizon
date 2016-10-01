@@ -24,7 +24,8 @@ class QuestionController: UIViewController {
         do {
             let urlData = URL(string: url)
             let data = try Data(contentsOf: urlData!)
-            backImage.image = UIImage(data: data)
+            let image = UIImage(data: data)
+            backImage.image = image
         } catch {
             print("Can't set image")
         }

@@ -11,23 +11,14 @@ import Alamofire
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var backImage: UIImageView!
+    @IBAction func OnNewGameTouch(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Question", bundle: nil)
+        let ctrl = storyboard.instantiateViewController(withIdentifier: "QUESTION_ID")
+        self.present(ctrl, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServer.getQuestion() { question in
-            self.loadImage(url: question.image)
-        }
-    }
-
-    func loadImage(url : String) {
-        do {
-            let urlData = URL(string: url)
-            let data = try Data(contentsOf: urlData!)
-            backImage.image = UIImage(data: data)
-        } catch {
-            print("Can't set image")
-        }
     }
 
 }
