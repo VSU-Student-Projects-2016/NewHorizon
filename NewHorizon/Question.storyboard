@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Question Controller-->
+        <scene sceneID="3WP-R2-zKx">
+            <objects>
+                <viewController id="D4z-Ot-Swn" customClass="QuestionController" customModule="NewHorizon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tog-d6-u7O"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ztx-Ag-uWA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2JE-dN-wto">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzm-vW-tMO"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mzm-vW-tMO" firstAttribute="top" secondItem="2JE-dN-wto" secondAttribute="top" id="V4v-rT-mkq"/>
+                            <constraint firstItem="mzm-vW-tMO" firstAttribute="width" secondItem="2JE-dN-wto" secondAttribute="width" id="WEB-uw-AgX"/>
+                            <constraint firstItem="mzm-vW-tMO" firstAttribute="height" secondItem="2JE-dN-wto" secondAttribute="height" id="WZ6-zb-G90"/>
+                            <constraint firstItem="mzm-vW-tMO" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="cmx-Hf-QCS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backImage" destination="mzm-vW-tMO" id="KCt-Ph-lBD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Q6-hR-irf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-670" y="655"/>
+        </scene>
+    </scenes>
+</document>
