@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,25 +17,92 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-TW-Ts8"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="res" translatesAutoresizingMaskIntoConstraints="NO" id="8nt-p8-xJ8">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8nt-p8-xJ8" secondAttribute="height" multiplier="79:125" id="9TC-FW-P65"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-ya-brV">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="2:1" id="PXP-JY-pMp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qu-Vb-omM">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="НОВАЯ ИГРА">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8m-QG-zyN">
+                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МУЗЫКА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5v-yw-ggk">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-A2-2fU">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="HTu-uB-Br0"/>
+                                    <constraint firstAttribute="height" constant="58" id="TWY-D3-YNl"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="instagram-photo-camera-logo-outline_318-56004.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2J-cw-NfR">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="twitter-bird-in-a-rounded-square_318-41054.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXH-6j-dO9">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="ПРАВИЛА ИГРЫ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dVx-TW-Ts8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="78V-OH-4QR"/>
-                            <constraint firstItem="dVx-TW-Ts8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="af2-hs-Jzp"/>
-                            <constraint firstItem="dVx-TW-Ts8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cZD-KB-1Ip"/>
-                            <constraint firstItem="dVx-TW-Ts8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hzX-nV-LeL"/>
+                            <constraint firstItem="Loo-ya-brV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5VU-oE-VxP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hXH-6j-dO9" secondAttribute="trailing" constant="10" id="F7W-AW-Gmz"/>
+                            <constraint firstItem="T8m-QG-zyN" firstAttribute="top" secondItem="O5v-yw-ggk" secondAttribute="bottom" constant="2" id="ICa-Gv-4Fe"/>
+                            <constraint firstItem="s2J-cw-NfR" firstAttribute="width" secondItem="nrA-A2-2fU" secondAttribute="width" id="JJi-9a-KXT"/>
+                            <constraint firstItem="8nt-p8-xJ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MpF-d5-Wae"/>
+                            <constraint firstAttribute="trailing" secondItem="nrA-A2-2fU" secondAttribute="trailing" constant="13" id="Uf2-Pd-rOO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s2J-cw-NfR" secondAttribute="bottom" constant="9" id="V3v-qc-gQo"/>
+                            <constraint firstItem="nrA-A2-2fU" firstAttribute="leading" secondItem="s2J-cw-NfR" secondAttribute="trailing" constant="8" id="WG7-dr-6VP"/>
+                            <constraint firstItem="O5v-yw-ggk" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" constant="15.5" id="YkI-E7-ILJ"/>
+                            <constraint firstItem="s2J-cw-NfR" firstAttribute="height" secondItem="nrA-A2-2fU" secondAttribute="height" id="aDA-9g-VFB"/>
+                            <constraint firstItem="Loo-ya-brV" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" id="aTx-Do-dBf"/>
+                            <constraint firstItem="T8m-QG-zyN" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" constant="15.5" id="dLn-de-dQ2"/>
+                            <constraint firstItem="hXH-6j-dO9" firstAttribute="top" secondItem="2qu-Vb-omM" secondAttribute="bottom" constant="10" id="e4p-Yu-YL7"/>
+                            <constraint firstItem="2qu-Vb-omM" firstAttribute="centerX" secondItem="Loo-ya-brV" secondAttribute="centerX" id="eui-ld-Ikf"/>
+                            <constraint firstItem="2qu-Vb-omM" firstAttribute="top" secondItem="Loo-ya-brV" secondAttribute="bottom" constant="18" id="f2D-hX-E0G"/>
+                            <constraint firstItem="8nt-p8-xJ8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="fKg-iV-SnB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T8m-QG-zyN" secondAttribute="bottom" constant="8" id="fgP-9Q-S59"/>
+                            <constraint firstAttribute="trailing" secondItem="Loo-ya-brV" secondAttribute="trailing" id="hd6-fb-fc6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nrA-A2-2fU" secondAttribute="bottom" constant="9" id="iPn-Jq-dq4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="10" id="o1N-a1-5Ak"/>
+                            <constraint firstItem="2qu-Vb-omM" firstAttribute="width" secondItem="hXH-6j-dO9" secondAttribute="width" id="r9x-zN-a0T"/>
+                            <constraint firstItem="8nt-p8-xJ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="rpb-9n-84q"/>
+                            <constraint firstItem="2qu-Vb-omM" firstAttribute="height" secondItem="hXH-6j-dO9" secondAttribute="height" id="sIs-qg-xOJ"/>
+                            <constraint firstItem="hXH-6j-dO9" firstAttribute="centerX" secondItem="2qu-Vb-omM" secondAttribute="centerX" id="wOO-BJ-r1t"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="backImage" destination="dVx-TW-Ts8" id="QwL-Ez-vCO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="438.53073463268368" y="112.8"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="instagram-photo-camera-logo-outline_318-56004.png" width="626" height="626"/>
+        <image name="res" width="546" height="1040"/>
+        <image name="twitter-bird-in-a-rounded-square_318-41054.png" width="626" height="626"/>
+    </resources>
 </document>
