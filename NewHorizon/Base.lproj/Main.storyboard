@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="res" translatesAutoresizingMaskIntoConstraints="NO" id="8nt-p8-xJ8">
@@ -27,9 +27,9 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-ya-brV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title-1" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-ya-brV">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="3:1" id="PXP-JY-pMp"/>
+                                    <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="258:100" id="PXP-JY-pMp"/>
                                     <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="2:1" id="f6V-Qy-ytK"/>
                                 </constraints>
                                 <variation key="default">
@@ -63,7 +63,7 @@
                                     <action selector="OnNewGameTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxm-Tf-phn"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8m-QG-zyN">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" onImage="on" offImage="title-1" translatesAutoresizingMaskIntoConstraints="NO" id="T8m-QG-zyN">
                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МУЗЫКА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5v-yw-ggk">
@@ -83,18 +83,18 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="HTu-uB-Br0">
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="50" id="TWY-D3-YNl">
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                     </constraint>
                                 </constraints>
-                                <state key="normal" backgroundImage="insta_logo"/>
+                                <state key="normal" backgroundImage="inst"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2J-cw-NfR">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" backgroundImage="twitter_logo"/>
+                                <state key="normal" backgroundImage="vk"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXH-6j-dO9">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,8 +166,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="insta_logo" width="206" height="206"/>
+        <image name="inst" width="512" height="512"/>
+        <image name="on" width="1378" height="512"/>
         <image name="res" width="546" height="1040"/>
-        <image name="twitter_logo" width="1139" height="926"/>
+        <image name="title-1" width="1325" height="512"/>
+        <image name="vk" width="512" height="512"/>
     </resources>
 </document>
