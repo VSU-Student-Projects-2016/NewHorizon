@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.0.0)
+  - TTSwitch (0.0.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - TTSwitch (~> 0.0.5)
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  TTSwitch: fef67a32dbd75e6981a3d27a7e954728e537de50
 
-PODFILE CHECKSUM: d93ff5caed6bc04772254c728de453f5b2bf3493
+PODFILE CHECKSUM: 530e105cb2aeff3ec2883e031e127fdcce6a4404
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
