@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,17 +20,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzm-vW-tMO"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j83-WT-XMv">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="Iuv-Kb-vec"/>
+                                    <constraint firstAttribute="height" constant="30" id="Pap-lV-GM2"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4c-B0-Wiz">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="fUa-gm-L0r"/>
+                                    <constraint firstAttribute="height" constant="30" id="j6U-co-YTs"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trb-Jj-VGy">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="BCZ-fy-aCp"/>
+                                    <constraint firstAttribute="height" constant="30" id="k3N-7a-1HM"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs6-Dh-pr8">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="0MN-ZF-212"/>
+                                    <constraint firstAttribute="height" constant="30" id="QIA-Xf-8wX"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggv-5X-H7g">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qs6-Dh-pr8" firstAttribute="top" secondItem="Trb-Jj-VGy" secondAttribute="bottom" constant="48" id="4b5-c6-QqD"/>
+                            <constraint firstItem="G4c-B0-Wiz" firstAttribute="top" secondItem="j83-WT-XMv" secondAttribute="bottom" constant="48" id="6zP-uX-mXp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Trb-Jj-VGy" secondAttribute="trailing" constant="45" id="DkC-Dt-ssZ"/>
+                            <constraint firstItem="Ggv-5X-H7g" firstAttribute="centerX" secondItem="mzm-vW-tMO" secondAttribute="centerX" id="L6Q-4h-j5U"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="height" secondItem="2JE-dN-wto" secondAttribute="height" id="P7z-jw-GDf"/>
+                            <constraint firstItem="G4c-B0-Wiz" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leadingMargin" constant="45" id="Uog-Sm-B7A"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="top" secondItem="2JE-dN-wto" secondAttribute="top" id="V4v-rT-mkq"/>
+                            <constraint firstItem="Ggv-5X-H7g" firstAttribute="top" secondItem="Tog-d6-u7O" secondAttribute="bottom" constant="10" id="ae6-nW-hsS"/>
+                            <constraint firstItem="Ztx-Ag-uWA" firstAttribute="top" secondItem="G4c-B0-Wiz" secondAttribute="bottom" constant="45" id="cjJ-4m-J9O"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="cmx-Hf-QCS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qs6-Dh-pr8" secondAttribute="trailing" constant="45" id="kBP-ie-HOR"/>
+                            <constraint firstItem="Ztx-Ag-uWA" firstAttribute="top" secondItem="Qs6-Dh-pr8" secondAttribute="bottom" constant="45" id="n3K-Qo-Nsa"/>
+                            <constraint firstItem="j83-WT-XMv" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leadingMargin" constant="45" id="tev-LP-UCw"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="width" secondItem="2JE-dN-wto" secondAttribute="width" id="vW7-1q-s7M"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backImage" destination="mzm-vW-tMO" id="hMc-QN-yme"/>
+                        <outlet property="button0" destination="j83-WT-XMv" id="6vm-ty-nIm"/>
+                        <outlet property="button1" destination="Trb-Jj-VGy" id="pQi-md-h7q"/>
+                        <outlet property="button2" destination="G4c-B0-Wiz" id="oOH-EI-9db"/>
+                        <outlet property="button3" destination="Qs6-Dh-pr8" id="XZG-TC-doY"/>
+                        <outlet property="questionText" destination="Ggv-5X-H7g" id="xRi-Fz-avI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Q6-hR-irf" userLabel="First Responder" sceneMemberID="firstResponder"/>
