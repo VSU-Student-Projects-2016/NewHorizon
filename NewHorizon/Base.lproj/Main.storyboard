@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="res" translatesAutoresizingMaskIntoConstraints="NO" id="8nt-p8-xJ8">
@@ -64,9 +64,9 @@
                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МУЗЫКА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5v-yw-ggk">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
@@ -78,10 +78,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-A2-2fU">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="HTu-uB-Br0">
+                                    <constraint firstAttribute="width" constant="50" id="HTu-uB-Br0">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                         <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                     </constraint>
-                                    <constraint firstAttribute="height" constant="55" id="TWY-D3-YNl">
+                                    <constraint firstAttribute="height" constant="50" id="TWY-D3-YNl">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                         <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                     </constraint>
                                 </constraints>
@@ -115,6 +117,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
+                            <constraint firstItem="hXH-6j-dO9" firstAttribute="trailing" secondItem="nrA-A2-2fU" secondAttribute="trailing" id="CKa-qc-qA2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hXH-6j-dO9" secondAttribute="trailing" constant="10" id="F7W-AW-Gmz"/>
                             <constraint firstItem="T8m-QG-zyN" firstAttribute="top" secondItem="O5v-yw-ggk" secondAttribute="bottom" constant="2" id="ICa-Gv-4Fe">
                                 <variation key="heightClass=compact-widthClass=regular" constant="6"/>
@@ -122,17 +125,12 @@
                             </constraint>
                             <constraint firstItem="s2J-cw-NfR" firstAttribute="width" secondItem="nrA-A2-2fU" secondAttribute="width" id="JJi-9a-KXT"/>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MpF-d5-Wae"/>
-                            <constraint firstAttribute="trailing" secondItem="nrA-A2-2fU" secondAttribute="trailing" constant="13" id="Uf2-Pd-rOO">
-                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
-                            </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s2J-cw-NfR" secondAttribute="bottom" constant="9" id="V3v-qc-gQo">
                                 <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                             </constraint>
                             <constraint firstItem="nrA-A2-2fU" firstAttribute="leading" secondItem="s2J-cw-NfR" secondAttribute="trailing" constant="8" id="WG7-dr-6VP"/>
-                            <constraint firstItem="O5v-yw-ggk" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" constant="15.5" id="YkI-E7-ILJ"/>
                             <constraint firstItem="s2J-cw-NfR" firstAttribute="height" secondItem="nrA-A2-2fU" secondAttribute="height" id="aDA-9g-VFB"/>
                             <constraint firstItem="Loo-ya-brV" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" id="aTx-Do-dBf"/>
-                            <constraint firstItem="T8m-QG-zyN" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" constant="15.5" id="dLn-de-dQ2"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="top" secondItem="2qu-Vb-omM" secondAttribute="bottom" constant="15" id="e4p-Yu-YL7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                             </constraint>
@@ -149,9 +147,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nrA-A2-2fU" secondAttribute="bottom" constant="9" id="iPn-Jq-dq4">
                                 <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                             </constraint>
+                            <constraint firstItem="hXH-6j-dO9" firstAttribute="leading" secondItem="T8m-QG-zyN" secondAttribute="leading" id="kaZ-kf-a0x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="10" id="o1N-a1-5Ak"/>
+                            <constraint firstItem="hXH-6j-dO9" firstAttribute="leading" secondItem="O5v-yw-ggk" secondAttribute="leading" id="oq3-eh-COW"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="width" secondItem="hXH-6j-dO9" secondAttribute="width" id="r9x-zN-a0T"/>
-                            <constraint firstItem="8nt-p8-xJ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="rpb-9n-84q"/>
+                            <constraint firstItem="8nt-p8-xJ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="rpb-9n-84q"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="height" secondItem="hXH-6j-dO9" secondAttribute="height" id="sIs-qg-xOJ"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="centerX" secondItem="2qu-Vb-omM" secondAttribute="centerX" id="wOO-BJ-r1t"/>
                         </constraints>
