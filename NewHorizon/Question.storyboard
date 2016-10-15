@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -105,17 +106,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-ls-ut4">
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-V6-xEL">
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gZ5-V6-xEL" firstAttribute="centerX" secondItem="NnJ-ls-ut4" secondAttribute="centerX" id="a5k-FR-hu2"/>
+                                    <constraint firstItem="gZ5-V6-xEL" firstAttribute="centerY" secondItem="NnJ-ls-ut4" secondAttribute="centerY" id="sb6-Ke-VAM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NnJ-ls-ut4" firstAttribute="width" secondItem="2JE-dN-wto" secondAttribute="width" id="1i8-yp-tfW"/>
                             <constraint firstAttribute="trailing" secondItem="mzm-vW-tMO" secondAttribute="trailing" id="2Jy-7h-Ihb"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="4iB-pG-9Cv"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="centerX" secondItem="mzm-vW-tMO" secondAttribute="centerX" id="5XL-VG-ufz"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="centerX" secondItem="Ggv-5X-H7g" secondAttribute="centerX" id="BwI-cV-GIY"/>
+                            <constraint firstItem="NnJ-ls-ut4" firstAttribute="top" secondItem="Tog-d6-u7O" secondAttribute="bottom" constant="-20" id="G0C-wQ-rh6"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="top" secondItem="2JE-dN-wto" secondAttribute="top" id="MR6-NG-X3F"/>
                             <constraint firstItem="Ggv-5X-H7g" firstAttribute="top" secondItem="Tog-d6-u7O" secondAttribute="bottom" constant="10" id="SfV-29-KPQ"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="euY-cU-Re4"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="-3" id="kOf-7J-msh"/>
+                            <constraint firstItem="NnJ-ls-ut4" firstAttribute="height" secondItem="2JE-dN-wto" secondAttribute="height" id="qvA-EJ-rSV"/>
+                            <constraint firstItem="NnJ-ls-ut4" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leadingMargin" constant="-20" id="rXc-Dd-oFK"/>
                             <constraint firstItem="Ztx-Ag-uWA" firstAttribute="top" secondItem="7nd-oh-vBu" secondAttribute="bottom" id="uAd-fz-e2E"/>
                             <constraint firstAttribute="trailing" secondItem="7nd-oh-vBu" secondAttribute="trailing" id="zNy-5R-cg4"/>
                         </constraints>
@@ -126,6 +143,7 @@
                         <outlet property="button1" destination="Trb-Jj-VGy" id="pQi-md-h7q"/>
                         <outlet property="button2" destination="G4c-B0-Wiz" id="oOH-EI-9db"/>
                         <outlet property="button3" destination="Qs6-Dh-pr8" id="XZG-TC-doY"/>
+                        <outlet property="placeholder" destination="NnJ-ls-ut4" id="SGq-ho-887"/>
                         <outlet property="questionText" destination="Ggv-5X-H7g" id="xRi-Fz-avI"/>
                     </connections>
                 </viewController>
