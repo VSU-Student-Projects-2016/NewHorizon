@@ -21,6 +21,7 @@ class QuestionController: UIViewController {
     @IBOutlet weak var backImage: UIImageView!
     
     var answer : Int = 0
+    var done : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,33 +53,40 @@ class QuestionController: UIViewController {
     
     func didAnswerSend(_ correct : Int) {
         let buttons = [button0, button1, button2, button3]
-        buttons[answer]?.backgroundColor = .red
+        buttons[answer - 1]?.backgroundColor = .red
         buttons[correct - 1]?.backgroundColor = .green
+        done = true
     }
     
-    @IBAction func answer1Touched(_ sender: UIButton) {
-        answer = 0
-        WebServer.sendEnumAnswer(answer) { correct in
-            self.didAnswerSend(correct)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (done) {
+            self.dismiss(animated: true)
         }
     }
     
-    @IBAction func answer2Touched(_ sender: UIButton) {
+    @IBAction func answer1Touched(_ sender: UIButton) {
         answer = 1
         WebServer.sendEnumAnswer(answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
-    @IBAction func answer3Touched(_ sender: UIButton) {
+    @IBAction func answer2Touched(_ sender: UIButton) {
         answer = 2
         WebServer.sendEnumAnswer(answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
-    @IBAction func answer4Touched(_ sender: UIButton) {
+    @IBAction func answer3Touched(_ sender: UIButton) {
         answer = 3
+        WebServer.sendEnumAnswer(answer) { correct in
+            self.didAnswerSend(correct)
+        }
+    }
+    
+    @IBAction func answer4Touched(_ sender: UIButton) {
+        answer = 4
         WebServer.sendEnumAnswer(answer) { correct in
             self.didAnswerSend(correct)
         }
