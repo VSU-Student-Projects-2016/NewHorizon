@@ -19,6 +19,8 @@ class QuestionController: UIViewController {
     
     @IBOutlet weak var backImage: UIImageView!
     
+    var answer : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         WebServer.getEnumQuestion() { question in
@@ -46,5 +48,38 @@ class QuestionController: UIViewController {
         }
     }
     
+    func didAnswerSend(_ correct : Int) {
+        let buttons = [button0, button1, button2, button3]
+        buttons[answer]?.backgroundColor = .red
+        buttons[correct - 1]?.backgroundColor = .green
+    }
+    
+    @IBAction func answer1Touched(_ sender: UIButton) {
+        answer = 0
+        WebServer.sendEnumAnswer(answer) { correct in
+            self.didAnswerSend(correct)
+        }
+    }
+    
+    @IBAction func answer2Touched(_ sender: UIButton) {
+        answer = 1
+        WebServer.sendEnumAnswer(answer) { correct in
+            self.didAnswerSend(correct)
+        }
+    }
+    
+    @IBAction func answer3Touched(_ sender: UIButton) {
+        answer = 2
+        WebServer.sendEnumAnswer(answer) { correct in
+            self.didAnswerSend(correct)
+        }
+    }
+    
+    @IBAction func answer4Touched(_ sender: UIButton) {
+        answer = 3
+        WebServer.sendEnumAnswer(answer) { correct in
+            self.didAnswerSend(correct)
+        }
+    }
 }
 

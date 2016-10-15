@@ -49,17 +49,16 @@ class WebServer {
         return ""
     }
     
-    static func sendEnumAnswer(answer : Int, onLoad : @escaping (_ right : Int) -> Void) {
-        let answerURL = "\(enumURL)/\(answer)"
-        Alamofire.request(answerURL).responseJSON { response in
+    static func sendEnumAnswer(_ userAnswer : Int, onLoad : @escaping (_ right : Int) -> Void) {
+        let answerURL = "\(enumURL)/\(userAnswer)"
+        let param : Parameters = ["sessionid" : sessionId]
+        
+        Alamofire.request(answerURL, parameters: param).responseJSON { response in
             switch (response.result) {
             case .success(let JSON):
                 let data = JSON as! NSDictionary
-                let image = data["image"] as! String
-                let text = data["text"] as! String
-                let answers = data["answers"] as! Array<String>
-                let question = Question(image: image, text: text, answers: answers)
-                onLoad(1)
+                let correct = data["correct"] as! Int
+                onLoad(correct)
                 break;
             case .failure(let error):
                 print(error)
