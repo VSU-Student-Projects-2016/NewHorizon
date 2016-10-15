@@ -21,7 +21,7 @@ class QuestionController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServer.getQuestion() { question in
+        WebServer.getEnumQuestion() { question in
             self.loadImage(url: question.image)
             self.loadQuestion(question : question)
         }
