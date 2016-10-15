@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="res" translatesAutoresizingMaskIntoConstraints="NO" id="8nt-p8-xJ8">
@@ -63,9 +63,6 @@
                                     <action selector="OnNewGameTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxm-Tf-phn"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" onImage="on" offImage="title-1" translatesAutoresizingMaskIntoConstraints="NO" id="T8m-QG-zyN">
-                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МУЗЫКА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5v-yw-ggk">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
@@ -122,10 +119,6 @@
                             </constraint>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="trailing" secondItem="nrA-A2-2fU" secondAttribute="trailing" id="CKa-qc-qA2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hXH-6j-dO9" secondAttribute="trailing" constant="10" id="F7W-AW-Gmz"/>
-                            <constraint firstItem="T8m-QG-zyN" firstAttribute="top" secondItem="O5v-yw-ggk" secondAttribute="bottom" constant="2" id="ICa-Gv-4Fe">
-                                <variation key="heightClass=compact-widthClass=regular" constant="6"/>
-                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
-                            </constraint>
                             <constraint firstItem="s2J-cw-NfR" firstAttribute="width" secondItem="nrA-A2-2fU" secondAttribute="width" id="JJi-9a-KXT"/>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MpF-d5-Wae"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s2J-cw-NfR" secondAttribute="bottom" constant="9" id="V3v-qc-gQo">
@@ -134,6 +127,7 @@
                             <constraint firstItem="nrA-A2-2fU" firstAttribute="leading" secondItem="s2J-cw-NfR" secondAttribute="trailing" constant="8" id="WG7-dr-6VP"/>
                             <constraint firstItem="s2J-cw-NfR" firstAttribute="height" secondItem="nrA-A2-2fU" secondAttribute="height" id="aDA-9g-VFB"/>
                             <constraint firstItem="Loo-ya-brV" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" id="aTx-Do-dBf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O5v-yw-ggk" secondAttribute="bottom" constant="41" id="c43-4h-9Ml"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="top" secondItem="2qu-Vb-omM" secondAttribute="bottom" constant="15" id="e4p-Yu-YL7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                             </constraint>
@@ -143,14 +137,10 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="fKg-iV-SnB"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T8m-QG-zyN" secondAttribute="bottom" constant="8" id="fgP-9Q-S59">
-                                <variation key="heightClass=regular-widthClass=regular" constant="15"/>
-                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="Loo-ya-brV" secondAttribute="trailing" id="hd6-fb-fc6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nrA-A2-2fU" secondAttribute="bottom" constant="9" id="iPn-Jq-dq4">
                                 <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                             </constraint>
-                            <constraint firstItem="hXH-6j-dO9" firstAttribute="leading" secondItem="T8m-QG-zyN" secondAttribute="leading" id="kaZ-kf-a0x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="10" id="o1N-a1-5Ak"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="leading" secondItem="O5v-yw-ggk" secondAttribute="leading" id="oq3-eh-COW"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="width" secondItem="hXH-6j-dO9" secondAttribute="width" id="r9x-zN-a0T"/>
@@ -159,6 +149,9 @@
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="centerX" secondItem="2qu-Vb-omM" secondAttribute="centerX" id="wOO-BJ-r1t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelMusic" destination="O5v-yw-ggk" id="NPV-Ds-hUp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,7 +160,6 @@
     </scenes>
     <resources>
         <image name="inst" width="512" height="512"/>
-        <image name="on" width="1378" height="512"/>
         <image name="res" width="546" height="1040"/>
         <image name="title-1" width="1325" height="512"/>
         <image name="vk" width="512" height="512"/>
