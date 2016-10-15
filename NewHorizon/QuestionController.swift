@@ -17,6 +17,7 @@ class QuestionController: UIViewController {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     
+    @IBOutlet weak var placeholder: UIView!
     @IBOutlet weak var backImage: UIImageView!
     
     var answer : Int = 0
@@ -26,6 +27,7 @@ class QuestionController: UIViewController {
         WebServer.getEnumQuestion() { question in
             self.loadImage(url: question.image)
             self.loadQuestion(question : question)
+            self.placeholder.removeFromSuperview()
         }
     }
     
