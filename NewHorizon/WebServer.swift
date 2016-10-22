@@ -18,6 +18,7 @@ class WebServer {
         QuestionType.ACCURACY: "http://diadlo.dyndns.org:8888/quiz/accuracyQuest"
     ]
     
+    static let mapUrl = "http://diadlo.dyndns.org:8888/quiz"
     static var sessionId : String = ""
     
     static func getQuestion(type: QuestionType, onLoad : @escaping (_ question : Question) -> Void) {
@@ -68,6 +69,23 @@ class WebServer {
                 let data = JSON as! NSDictionary
                 let correct = data["correct"] as! Int
                 onLoad(correct)
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
+    }
+    
+    static func getMap(onLoad: @escaping (_ map: Map) -> Void) {
+        let param : Parameters = ["sessionid" : sessionId]
+        
+        Alamofire.request(mapUrl, parameters: param).responseJSON { response in
+            switch (response.result) {
+            case .success(let JSON):
+                let data = JSON as! NSDictionary
+                let map = Map(data)
+                onLoad(map)
                 break;
             case .failure(let error):
                 print(error)
