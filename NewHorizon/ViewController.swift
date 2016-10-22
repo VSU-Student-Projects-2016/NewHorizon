@@ -43,7 +43,13 @@ class ViewController: UIViewController {
         _switch.addTarget(self, action: #selector(ViewController.controlValueChanged(_:)), for: .valueChanged)
         view.addSubview(_switch)
         
-        //labelMusic.addConstraint(<#T##constraint: NSLayoutConstraint##NSLayoutConstraint#>)
+        let _constraintLeading = NSLayoutConstraint(item: labelMusic, attribute: .leading, relatedBy: .equal, toItem: _switch, attribute: .leading, multiplier: 1.0, constant: 0.0)
+        //let _margins = view.layoutMarginsGuide
+        //_switch.bottomAnchor.constraint(equalTo: _margins.bottomAnchor).activate = true;
+        
+        let _constraintBottom = NSLayoutConstraint(item: _switch, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 8.0)
+        //let _constraintBottom = NSLayoutConstraint(item: _switch, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0, constant: 8)
+        self.view!.addConstraints([_constraintLeading, _constraintBottom])
     }
 }
 
