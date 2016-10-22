@@ -18,13 +18,25 @@
                         <viewControllerLayoutGuide type="bottom" id="Ztx-Ag-uWA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2JE-dN-wto">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzm-vW-tMO">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="mzm-vW-tMO" secondAttribute="height" multiplier="730:280" id="l1t-gT-Wsm"/>
+                                    <constraint firstAttribute="width" secondItem="mzm-vW-tMO" secondAttribute="height" multiplier="730:410" constant="1" id="NRq-0F-cMb"/>
+                                    <constraint firstAttribute="width" secondItem="mzm-vW-tMO" secondAttribute="height" multiplier="730:280" id="Rzk-uR-o5h"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NRq-0F-cMb"/>
+                                        <exclude reference="Rzk-uR-o5h"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="NRq-0F-cMb"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nd-oh-vBu">
                                 <subviews>
@@ -87,8 +99,8 @@
                                         <variation key="heightClass=compact-widthClass=regular" constant="60"/>
                                     </constraint>
                                     <constraint firstItem="j83-WT-XMv" firstAttribute="top" secondItem="7nd-oh-vBu" secondAttribute="top" constant="25" id="Md8-pr-OMF">
-                                        <variation key="heightClass=compact-widthClass=compact" constant="15"/>
-                                        <variation key="heightClass=compact-widthClass=regular" constant="18"/>
+                                        <variation key="heightClass=compact-widthClass=compact" constant="12"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="15"/>
                                     </constraint>
                                     <constraint firstItem="Trb-Jj-VGy" firstAttribute="height" secondItem="j83-WT-XMv" secondAttribute="height" id="O0H-hI-gZu"/>
                                     <constraint firstAttribute="trailing" secondItem="Trb-Jj-VGy" secondAttribute="trailing" constant="70" id="Sbf-Xs-mSj">
@@ -97,25 +109,27 @@
                                     </constraint>
                                     <constraint firstItem="Qs6-Dh-pr8" firstAttribute="bottom" secondItem="G4c-B0-Wiz" secondAttribute="bottom" id="VTA-Lo-TLj"/>
                                     <constraint firstAttribute="bottom" secondItem="G4c-B0-Wiz" secondAttribute="bottom" constant="25" id="ZxW-ld-yhX">
-                                        <variation key="heightClass=compact-widthClass=compact" constant="15"/>
-                                        <variation key="heightClass=compact-widthClass=regular" constant="18"/>
+                                        <variation key="heightClass=compact-widthClass=compact" constant="12"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="15"/>
                                     </constraint>
                                     <constraint firstItem="Trb-Jj-VGy" firstAttribute="leading" secondItem="j83-WT-XMv" secondAttribute="trailing" constant="20" id="b8J-Tm-4BD"/>
                                     <constraint firstItem="G4c-B0-Wiz" firstAttribute="width" secondItem="j83-WT-XMv" secondAttribute="width" id="cli-jU-gnr"/>
-                                    <constraint firstItem="G4c-B0-Wiz" firstAttribute="top" secondItem="j83-WT-XMv" secondAttribute="bottom" constant="13" id="gxs-kB-nnw"/>
+                                    <constraint firstItem="G4c-B0-Wiz" firstAttribute="top" secondItem="j83-WT-XMv" secondAttribute="bottom" constant="10" id="gxs-kB-nnw">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="15"/>
+                                    </constraint>
                                     <constraint firstItem="Trb-Jj-VGy" firstAttribute="trailing" secondItem="Qs6-Dh-pr8" secondAttribute="trailing" id="hAs-s3-7gF"/>
                                     <constraint firstItem="Qs6-Dh-pr8" firstAttribute="height" secondItem="j83-WT-XMv" secondAttribute="height" id="vUl-Kl-aYU"/>
                                     <constraint firstItem="Trb-Jj-VGy" firstAttribute="top" secondItem="j83-WT-XMv" secondAttribute="top" id="zax-lg-6tY"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggv-5X-H7g">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-ls-ut4">
