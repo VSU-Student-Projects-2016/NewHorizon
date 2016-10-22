@@ -14,8 +14,8 @@ class WebServer {
     }
     
     static let URLs : [QuestionType: String] = [
-        QuestionType.ENUM: "http://diadlo.dyndns.org:8888/HorizonQuiz",
-        QuestionType.ACCURACY: "http://diadlo.dyndns.org:8888/HorizonQuiz/accuracyQuestion"
+        QuestionType.ENUM: "http://diadlo.dyndns.org:8888/quiz/enumQuest",
+        QuestionType.ACCURACY: "http://diadlo.dyndns.org:8888/quiz/accuracyQuest/"
     ]
     
     static var sessionId : String = ""
