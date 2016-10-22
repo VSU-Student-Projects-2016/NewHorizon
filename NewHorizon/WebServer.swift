@@ -55,7 +55,9 @@ class WebServer {
         return ""
     }
     
-    static func sendAnswer(type: QuestionType, userAnswer : Int, onLoad : @escaping (_ result : Int) -> Void) {
+    static func sendAnswer(type: QuestionType, userAnswer : Int, 
+        onLoad : @escaping (_ correct : Int) -> Void) {
+
         let url = URLs[type]
         let answerURL = url! + "/" + String(userAnswer)
         let param : Parameters = ["sessionid" : sessionId]
@@ -64,13 +66,8 @@ class WebServer {
             switch (response.result) {
             case .success(let JSON):
                 let data = JSON as! NSDictionary
-                var result : Int;
-                if (data["correct"] == nil) {
-                    result = data["delta"] as! Int
-                } else {
-                    result = data["correct"] as! Int
-                }
-                onLoad(result)
+                let correct = data["correct"] as! Int
+                onLoad(correct)
                 break;
             case .failure(let error):
                 print(error)
