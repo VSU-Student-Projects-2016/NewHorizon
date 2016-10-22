@@ -63,7 +63,8 @@
                                     <action selector="OnNewGameTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxm-Tf-phn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МУЗЫКА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5v-yw-ggk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="МУЗЫКА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5v-yw-ggk">
+                                <frame key="frameInset" minX="252.66666666666669" minY="355" width="84.666666666666686" height="21.666666666666686"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,13 +122,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hXH-6j-dO9" secondAttribute="trailing" constant="10" id="F7W-AW-Gmz"/>
                             <constraint firstItem="s2J-cw-NfR" firstAttribute="width" secondItem="nrA-A2-2fU" secondAttribute="width" id="JJi-9a-KXT"/>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MpF-d5-Wae"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s2J-cw-NfR" secondAttribute="bottom" constant="9" id="V3v-qc-gQo">
-                                <variation key="heightClass=regular-widthClass=regular" constant="15"/>
-                            </constraint>
                             <constraint firstItem="nrA-A2-2fU" firstAttribute="leading" secondItem="s2J-cw-NfR" secondAttribute="trailing" constant="8" id="WG7-dr-6VP"/>
                             <constraint firstItem="s2J-cw-NfR" firstAttribute="height" secondItem="nrA-A2-2fU" secondAttribute="height" id="aDA-9g-VFB"/>
                             <constraint firstItem="Loo-ya-brV" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" id="aTx-Do-dBf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O5v-yw-ggk" secondAttribute="bottom" constant="41" id="c43-4h-9Ml"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="top" secondItem="2qu-Vb-omM" secondAttribute="bottom" constant="15" id="e4p-Yu-YL7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                             </constraint>
@@ -141,6 +138,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nrA-A2-2fU" secondAttribute="bottom" constant="9" id="iPn-Jq-dq4">
                                 <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                             </constraint>
+                            <constraint firstItem="s2J-cw-NfR" firstAttribute="bottom" secondItem="nrA-A2-2fU" secondAttribute="bottom" id="krq-Mn-7Mv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="10" id="o1N-a1-5Ak"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="leading" secondItem="O5v-yw-ggk" secondAttribute="leading" id="oq3-eh-COW"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="width" secondItem="hXH-6j-dO9" secondAttribute="width" id="r9x-zN-a0T"/>
@@ -150,6 +148,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnInst" destination="nrA-A2-2fU" id="gXy-6W-q5t"/>
                         <outlet property="labelMusic" destination="O5v-yw-ggk" id="NPV-Ds-hUp"/>
                     </connections>
                 </viewController>
