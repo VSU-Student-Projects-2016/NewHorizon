@@ -14,6 +14,8 @@
 		AEA9EE341D96893D00D6FC68 /* NewHorizon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEA9EE321D96893D00D6FC68 /* NewHorizon.xcdatamodeld */; };
 		AEA9EE361D96893D00D6FC68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEA9EE351D96893D00D6FC68 /* Assets.xcassets */; };
 		AEA9EE391D96893D00D6FC68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA9EE371D96893D00D6FC68 /* LaunchScreen.storyboard */; };
+		AEB2A4081DB2693A006A5302 /* Accuracy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB2A4061DB2693A006A5302 /* Accuracy.storyboard */; };
+		AEB2A4091DB2693A006A5302 /* AccuracyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB2A4071DB2693A006A5302 /* AccuracyController.swift */; };
 		AEF270AD1D96AD03008886AE /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF270AC1D96AD03008886AE /* WebServer.swift */; };
 		AEF270AF1D96AF61008886AE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF270AE1D96AF61008886AE /* Question.swift */; };
 		AEF5F1971D9FD24A00C224DE /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF5F1961D9FD24A00C224DE /* Question.storyboard */; };
@@ -32,6 +34,8 @@
 		AEA9EE351D96893D00D6FC68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEA9EE381D96893D00D6FC68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEA9EE3A1D96893D00D6FC68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB2A4061DB2693A006A5302 /* Accuracy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accuracy.storyboard; sourceTree = "<group>"; };
+		AEB2A4071DB2693A006A5302 /* AccuracyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyController.swift; sourceTree = "<group>"; };
 		AEF270AC1D96AD03008886AE /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
 		AEF270AE1D96AF61008886AE /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AEF5F1961D9FD24A00C224DE /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		AEA9EE2A1D96893D00D6FC68 /* NewHorizon */ = {
 			isa = PBXGroup;
 			children = (
+				AEB2A4061DB2693A006A5302 /* Accuracy.storyboard */,
+				AEB2A4071DB2693A006A5302 /* AccuracyController.swift */,
 				AEA9EE2B1D96893D00D6FC68 /* AppDelegate.swift */,
 				AEA9EE2D1D96893D00D6FC68 /* ViewController.swift */,
 				AEA9EE2F1D96893D00D6FC68 /* Main.storyboard */,
@@ -168,6 +174,7 @@
 			files = (
 				AEA9EE391D96893D00D6FC68 /* LaunchScreen.storyboard in Resources */,
 				AEA9EE361D96893D00D6FC68 /* Assets.xcassets in Resources */,
+				AEB2A4081DB2693A006A5302 /* Accuracy.storyboard in Resources */,
 				AEF5F1971D9FD24A00C224DE /* Question.storyboard in Resources */,
 				AEA9EE311D96893D00D6FC68 /* Main.storyboard in Resources */,
 			);
@@ -233,6 +240,7 @@
 				AEA9EE2C1D96893D00D6FC68 /* AppDelegate.swift in Sources */,
 				AEA9EE341D96893D00D6FC68 /* NewHorizon.xcdatamodeld in Sources */,
 				AEF270AD1D96AD03008886AE /* WebServer.swift in Sources */,
+				AEB2A4091DB2693A006A5302 /* AccuracyController.swift in Sources */,
 				AEF5F1991D9FD4D100C224DE /* QuestionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

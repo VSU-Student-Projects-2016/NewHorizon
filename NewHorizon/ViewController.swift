@@ -15,8 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelMusic: UILabel!
     
     @IBAction func OnNewGameTouch(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Question", bundle: nil)
-        let ctrl = storyboard.instantiateViewController(withIdentifier: "QUESTION_ID")
+        let name = "Accuracy"//arc4random() % 2 == 0 ? "Question" : "Accuracy"
+        let id = "ACCURACY_ID"//arc4random() % 2 == 0 ? "QUESTION_ID" : "ACCURACY_ID"
+        
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let ctrl = storyboard.instantiateViewController(withIdentifier: id)
         self.present(ctrl, animated: true, completion: nil)
     }
     

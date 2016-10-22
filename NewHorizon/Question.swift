@@ -18,4 +18,10 @@ class Question {
         self.text = text
         self.answers = answers
     }
+    
+    public init(image : String, text : String) {
+        self.image = image
+        self.text = text
+        self.answers = []
+    }
 }
