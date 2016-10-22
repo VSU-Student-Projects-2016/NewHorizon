@@ -35,17 +35,7 @@ class WebServer {
             switch (response.result) {
             case .success(let JSON):
                 let data = JSON as! NSDictionary
-                let image = data["image"] as! String
-                let text = data["text"] as! String
-                let answers = data["answers"]
-                var answersArray : Array<String>
-                if (answers != nil) {
-                    answersArray = data["answers"] as! Array<String>
-                } else {
-                    answersArray = [ ]
-                }
-                
-                let question = Question(image: image, text: text, answers: answersArray)
+                let question = Question(data)
                 onLoad(question)
                 break;
             case .failure(let error):
