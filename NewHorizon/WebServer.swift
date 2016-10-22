@@ -9,13 +9,22 @@
 import Alamofire
 
 class WebServer {
-    static let enumURL : String = "http://diadlo.dyndns.org:8888/HorizonQuiz"
+    enum QuestionType {
+        case ENUM, ACCURACY
+    }
+    
+    static let URLs : [QuestionType: String] = [
+        QuestionType.ENUM: "http://diadlo.dyndns.org:8888/HorizonQuiz",
+        QuestionType.ACCURACY: "http://diadlo.dyndns.org:8888/HorizonQuiz/accuracyQuestion"
+    ]
+    
     static var sessionId : String = ""
     
-    static func getEnumQuestion(onLoad : @escaping (_ question : Question) -> Void) {
+    static func getQuestion(type: QuestionType, onLoad : @escaping (_ question : Question) -> Void) {
         let param : Parameters = ["sessionid" : sessionId]
+        let url = URLs[type]
         
-        Alamofire.request(enumURL, parameters: param).responseJSON { response in
+        Alamofire.request(url!, parameters: param).responseJSON { response in
             let headerFields = response.response?.allHeaderFields as? [String: String]
             let url = response.request?.url
             if (headerFields != nil && url != nil) {
@@ -28,8 +37,15 @@ class WebServer {
                 let data = JSON as! NSDictionary
                 let image = data["image"] as! String
                 let text = data["text"] as! String
-                let answers = data["answers"] as! Array<String>
-                let question = Question(image: image, text: text, answers: answers)
+                let answers = data["answers"]
+                var answersArray : Array<String>
+                if (answers != nil) {
+                    answersArray = data["answers"] as! Array<String>
+                } else {
+                    answersArray = [ ]
+                }
+                
+                let question = Question(image: image, text: text, answers: answersArray)
                 onLoad(question)
                 break;
             case .failure(let error):
@@ -49,16 +65,22 @@ class WebServer {
         return ""
     }
     
-    static func sendEnumAnswer(_ userAnswer : Int, onLoad : @escaping (_ right : Int) -> Void) {
-        let answerURL = "\(enumURL)/\(userAnswer)"
+    static func sendAnswer(type: QuestionType, userAnswer : Int, onLoad : @escaping (_ result : Int) -> Void) {
+        let url = URLs[type]
+        let answerURL = url! + "/" + String(userAnswer)
         let param : Parameters = ["sessionid" : sessionId]
         
         Alamofire.request(answerURL, parameters: param).responseJSON { response in
             switch (response.result) {
             case .success(let JSON):
                 let data = JSON as! NSDictionary
-                let correct = data["correct"] as! Int
-                onLoad(correct)
+                var result : Int;
+                if (data["correct"] == nil) {
+                    result = data["delta"] as! Int
+                } else {
+                    result = data["correct"] as! Int
+                }
+                onLoad(result)
                 break;
             case .failure(let error):
                 print(error)

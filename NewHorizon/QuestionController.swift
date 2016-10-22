@@ -20,12 +20,14 @@ class QuestionController: UIViewController {
     @IBOutlet weak var placeholder: UIView!
     @IBOutlet weak var backImage: UIImageView!
     
+    let type = WebServer.QuestionType.ENUM
     var answer : Int = 0
     var done : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServer.getEnumQuestion() { question in
+        
+        WebServer.getQuestion(type: type) { question in
             self.loadImage(url: question.image)
             self.loadQuestion(question : question)
             self.placeholder.removeFromSuperview()
@@ -66,28 +68,28 @@ class QuestionController: UIViewController {
     
     @IBAction func answer1Touched(_ sender: UIButton) {
         answer = 1
-        WebServer.sendEnumAnswer(answer) { correct in
+        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer2Touched(_ sender: UIButton) {
         answer = 2
-        WebServer.sendEnumAnswer(answer) { correct in
+        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer3Touched(_ sender: UIButton) {
         answer = 3
-        WebServer.sendEnumAnswer(answer) { correct in
+        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer4Touched(_ sender: UIButton) {
         answer = 4
-        WebServer.sendEnumAnswer(answer) { correct in
+        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
