@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Controller-->
+        <scene sceneID="hTA-gk-uew">
+            <objects>
+                <viewController storyboardIdentifier="MAP_ID" id="7aL-Fx-nmD" customClass="MapController" customModule="NewHorizon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VzK-Pp-YjE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z0F-VX-UPk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uTe-zi-gI6">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Urp-iQ-KMK"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Urp-iQ-KMK" firstAttribute="width" secondItem="uTe-zi-gI6" secondAttribute="width" id="JNZ-ge-hSd"/>
+                            <constraint firstItem="Urp-iQ-KMK" firstAttribute="leading" secondItem="uTe-zi-gI6" secondAttribute="leadingMargin" constant="-20" id="W0Y-U1-efb"/>
+                            <constraint firstItem="Urp-iQ-KMK" firstAttribute="top" secondItem="VzK-Pp-YjE" secondAttribute="bottom" constant="-20" id="c0u-Zz-5lx"/>
+                            <constraint firstItem="Urp-iQ-KMK" firstAttribute="height" secondItem="uTe-zi-gI6" secondAttribute="height" id="xUL-Sj-djw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backImage" destination="Urp-iQ-KMK" id="F9Z-Y8-HTo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqj-iw-Nx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679" y="110"/>
+        </scene>
+    </scenes>
+</document>

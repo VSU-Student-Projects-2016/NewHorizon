@@ -16,13 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnInst: UIButton!
     
     @IBAction func OnNewGameTouch(_ sender: UIButton) {
-        let rand = arc4random() % 2
-        let name = rand == 0 ? "Question" : "Accuracy"
-        let id = rand == 0 ? "QUESTION_ID" : "ACCURACY_ID"
-        
-        let storyboard = UIStoryboard(name: name, bundle: nil)
-        let ctrl = storyboard.instantiateViewController(withIdentifier: id)
+        let storyboard = UIStoryboard(name: "MapView", bundle: nil)
+        let ctrl = storyboard.instantiateViewController(withIdentifier: "MAP_ID")
         self.present(ctrl, animated: true, completion: nil)
+        
+        return
+        
+//        let rand = arc4random() % 2
+//        let name = rand == 0 ? "Question" : "Accuracy"
+//        let id = rand == 0 ? "QUESTION_ID" : "ACCURACY_ID"
+        
+//        let storyboard = UIStoryboard(name: name, bundle: nil)
+//        let ctrl = storyboard.instantiateViewController(withIdentifier: id)
+//        self.present(ctrl, animated: true, completion: nil)
     }
     
     func controlValueChanged(_ value: Int)
@@ -32,6 +38,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TODO: split on methods
         let music = BetterSegmentedControl(
             frame: CGRect(x: 232.0, y: 370.0, width: 90.0, height: 20.0),
             titles: ["НЕТ", "ДА"],
