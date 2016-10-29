@@ -41,34 +41,34 @@ class MapController: UIViewController {
             let image = UIImage(data: data)
             let imageView = UIImageView(image: image)
             view.addSubview(imageView)
-            setPosition(imageView, x: region.pos.x, y: region.pos.y, w: region.width, h: region.height)
-            //setSize(imageView, w: region.width, h: region.height)
+    
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            setPosition(imageView, x: region.pos.x, y: region.pos.y)
+            setSize(imageView, w: region.width, h: region.height)
+            
+            self.view.layoutIfNeeded()
         } catch {
             print("Can't set image")
         }
     }
     
-    func setPosition(_ image : UIImageView, x : Double, y : Double, w : Double, h : Double) {
-        let _w = w * screenWidth
-        let _h = h * screenHeight
+    func setPosition(_ image : UIImageView, x : Double, y : Double) {
         let _x = x * screenWidth
         let _y = y * screenHeight
-        
-        image.translatesAutoresizingMaskIntoConstraints = false
-        
-        let width = NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(_w))
-        let height = NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(_h))
         
         let xConst = NSLayoutConstraint(item: image, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: CGFloat(_x))
         let yConst = NSLayoutConstraint(item: image, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: CGFloat(_y))
         
-        NSLayoutConstraint.activate([height, width, xConst, yConst])
-        self.view.layoutIfNeeded()
+        NSLayoutConstraint.activate([xConst, yConst])
     }
     
-    func setSize(_ image : UIImageView, w : Int, h : Int) {
-        let width = NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(w))
-        let height = NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(h))
+    func setSize(_ image : UIImageView, w : Double, h : Double) {
+        let _w = w * screenWidth
+        let _h = h * screenHeight
+        
+        let width = NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(_w))
+        let height = NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(_h))
         
         NSLayoutConstraint.activate([width, height])
     }
