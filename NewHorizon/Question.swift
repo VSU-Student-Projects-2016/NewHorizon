@@ -23,10 +23,10 @@ class Question {
         image = data["image"] as! String
         text = data["text"] as! String
         let answersData = data["answers"]
-        if (answers != nil) {
+        if (answersData != nil) {
             answers = data["answers"] as! Array<String>
         } else {
             answers = []
         }
-                
+    }
 }

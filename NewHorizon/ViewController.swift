@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnInst: UIButton!
     
     @IBAction func OnNewGameTouch(_ sender: UIButton) {
-        let name = "Accuracy"//arc4random() % 2 == 0 ? "Question" : "Accuracy"
-        let id = "ACCURACY_ID"//arc4random() % 2 == 0 ? "QUESTION_ID" : "ACCURACY_ID"
+        let rand = arc4random() % 2
+        let name = rand == 0 ? "Question" : "Accuracy"
+        let id = rand == 0 ? "QUESTION_ID" : "ACCURACY_ID"
         
         let storyboard = UIStoryboard(name: name, bundle: nil)
         let ctrl = storyboard.instantiateViewController(withIdentifier: id)
