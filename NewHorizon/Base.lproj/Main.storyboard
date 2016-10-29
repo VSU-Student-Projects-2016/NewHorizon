@@ -87,12 +87,20 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="triangle"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu8-U9-a4d">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ImT-IO-WUe"/>
+                                    <constraint firstAttribute="height" constant="40" id="pgd-Qo-R5h"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="circle"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2qu-Vb-omM" firstAttribute="top" secondItem="gu8-U9-a4d" secondAttribute="bottom" constant="-20" id="4gx-IH-LaI"/>
                             <constraint firstItem="Loo-ya-brV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5VU-oE-VxP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hXH-6j-dO9" secondAttribute="trailing" constant="10" id="F7W-AW-Gmz"/>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MpF-d5-Wae"/>
+                            <constraint firstItem="gu8-U9-a4d" firstAttribute="leading" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="-20" id="TlD-g1-fkX"/>
                             <constraint firstItem="Loo-ya-brV" firstAttribute="leading" secondItem="8nt-p8-xJ8" secondAttribute="trailing" id="aTx-Do-dBf"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="top" secondItem="2qu-Vb-omM" secondAttribute="bottom" constant="15" id="e4p-Yu-YL7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
@@ -104,7 +112,7 @@
                             </constraint>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="fKg-iV-SnB"/>
                             <constraint firstAttribute="trailing" secondItem="Loo-ya-brV" secondAttribute="trailing" id="hd6-fb-fc6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="10" id="o1N-a1-5Ak"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2qu-Vb-omM" secondAttribute="trailing" constant="20" id="o1N-a1-5Ak"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="width" secondItem="hXH-6j-dO9" secondAttribute="width" id="r9x-zN-a0T"/>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="rpb-9n-84q"/>
                             <constraint firstItem="DER-Zs-jzm" firstAttribute="centerX" secondItem="Loo-ya-brV" secondAttribute="centerX" id="s18-QM-T3X"/>
@@ -121,15 +129,15 @@
             </objects>
             <point key="canvasLocation" x="437.77173913043481" y="111.59420289855073"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="ZVO-W4-6N4">
             <objects>
-                <viewController id="dod-tu-Cma" sceneMemberID="viewController">
+                <viewController id="dod-tu-Cma" customClass="SettingsViewController" customModule="NewHorizon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fSD-qL-NOD"/>
                         <viewControllerLayoutGuide type="bottom" id="Uty-RN-vHb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xPy-d3-caL">
+                    <view key="view" contentMode="scaleToFill" id="xPy-d3-caL" customClass="Setting">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -176,6 +184,10 @@
                             <constraint firstItem="nrA-A2-2fU" firstAttribute="bottom" secondItem="SsB-Gt-nKW" secondAttribute="bottom" id="vlZ-Sm-umu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnInst" destination="nrA-A2-2fU" id="dQQ-Zb-dxi"/>
+                        <outlet property="labelMusic" destination="VUM-IS-8LF" id="WNQ-7v-nIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiB-Rq-IhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,6 +195,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle" width="743" height="743"/>
         <image name="inst" width="500" height="500"/>
         <image name="res" width="546" height="1040"/>
         <image name="title-3" width="4674" height="1813"/>
