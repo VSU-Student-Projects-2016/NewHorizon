@@ -18,7 +18,6 @@
 		AEA9EE391D96893D00D6FC68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA9EE371D96893D00D6FC68 /* LaunchScreen.storyboard */; };
 		AEB2A4081DB2693A006A5302 /* Accuracy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB2A4061DB2693A006A5302 /* Accuracy.storyboard */; };
 		AEB2A4091DB2693A006A5302 /* AccuracyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB2A4071DB2693A006A5302 /* AccuracyController.swift */; };
-		AEC607001DC4CC9500F22FB2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC606FF1DC4CC9500F22FB2 /* SettingsViewController.swift */; };
 		AEF270AD1D96AD03008886AE /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF270AC1D96AD03008886AE /* WebServer.swift */; };
 		AEF270AF1D96AF61008886AE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF270AE1D96AF61008886AE /* Question.swift */; };
 		AEF5F1971D9FD24A00C224DE /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF5F1961D9FD24A00C224DE /* Question.storyboard */; };
@@ -43,7 +42,6 @@
 		AEA9EE3A1D96893D00D6FC68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB2A4061DB2693A006A5302 /* Accuracy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accuracy.storyboard; sourceTree = "<group>"; };
 		AEB2A4071DB2693A006A5302 /* AccuracyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyController.swift; sourceTree = "<group>"; };
-		AEC606FF1DC4CC9500F22FB2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AEF270AC1D96AD03008886AE /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
 		AEF270AE1D96AF61008886AE /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AEF5F1961D9FD24A00C224DE /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				AEB2A4071DB2693A006A5302 /* AccuracyController.swift */,
 				AEA9EE2B1D96893D00D6FC68 /* AppDelegate.swift */,
 				AEA9EE2D1D96893D00D6FC68 /* ViewController.swift */,
-				AEC606FF1DC4CC9500F22FB2 /* SettingsViewController.swift */,
 				AEA9EE2F1D96893D00D6FC68 /* Main.storyboard */,
 				AEA9EE2D1D96893D00D6FC68 /* ViewController.swift */,
 				AE1F99D71DC4AA17004E25A9 /* MapView.storyboard */,
@@ -263,7 +260,6 @@
 				AEB2A4091DB2693A006A5302 /* AccuracyController.swift in Sources */,
 				AE1F99D61DC4A997004E25A9 /* MapController.swift in Sources */,
 				AEF5F1991D9FD4D100C224DE /* QuestionController.swift in Sources */,
-				AEC607001DC4CC9500F22FB2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
