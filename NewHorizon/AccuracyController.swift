@@ -47,14 +47,6 @@ class AccuracyController: UIViewController {
         }
     }
     
-    @IBAction func onAnswerChanged(_ sender: UITextField) {
-        answer = Int(answerField.text!)!
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
-            self.didAnswerSend(correct)
-        }
-    }
-    
-    
     @IBAction func onAnswerTouch(_ sender: UIButton) {
         answer = Int(answerField.text!)!
         WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
@@ -64,8 +56,6 @@ class AccuracyController: UIViewController {
     
     func didAnswerSend(_ correct : Int) {
         correctAnswer.text = String(correct)
-        //buttons[answer - 1]?.backgroundColor = .red
-        //buttons[correct - 1]?.backgroundColor = .green
         done = true
     }
     

@@ -11,7 +11,7 @@ import Foundation
 class Question {
     var image : String = ""
     var text : String = ""
-    var answers : Array<String> = [""]
+    var answers : Array<String> = []
     
     public init(image : String, text : String, answers : Array<String>) {
         self.image = image
@@ -19,9 +19,14 @@ class Question {
         self.answers = answers
     }
     
-    public init(image : String, text : String) {
-        self.image = image
-        self.text = text
-        self.answers = []
+    public init(_ data: NSDictionary) {
+        image = data["image"] as! String
+        text = data["text"] as! String
+        let answersData = data["answers"]
+        if (answersData != nil) {
+            answers = data["answers"] as! Array<String>
+        } else {
+            answers = []
+        }
     }
 }
