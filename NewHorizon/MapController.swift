@@ -52,7 +52,22 @@ class MapController: UIViewController {
             setSize(imageView, w: region.width, h: region.height)
             
             imageView.touchDown = { image in
-                print(region.ID);
+                WebServer.attack(region: region.ID, onLoad: { question in
+                    let name = question.isEnum() ? "Question" : "Accuracy"
+                    let id = question.isEnum() ? "QUESTION_ID" : "ACCURACY_ID"
+                    
+                    let storyboard = UIStoryboard(name: name, bundle: nil)
+                    let ctrl = storyboard.instantiateViewController(withIdentifier: id)
+                    // TODO: Add interface for QuestiuonController
+                    if question.isEnum() {
+                        let enumCtrl = ctrl as! QuestionController
+                        enumCtrl.question = question
+                    } else {
+                        let enumCtrl = ctrl as! AccuracyController
+                        enumCtrl.question = question
+                    }
+                    self.present(ctrl, animated: true, completion: nil)
+                })
             }
             
             self.view.layoutIfNeeded()

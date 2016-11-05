@@ -14,18 +14,19 @@ class WebServer {
     }
     
     static let URLs : [QuestionType: String] = [
-        QuestionType.ENUM: "http://diadlo.dyndns.org:8888/quiz/enumQuest",
-        QuestionType.ACCURACY: "http://diadlo.dyndns.org:8888/quiz/accuracyQuest"
+        QuestionType.ENUM: "http://diadlo.dyndns.org:8888/quiz/",
+        QuestionType.ACCURACY: "http://diadlo.dyndns.org:8888/quiz/"
     ]
     
-    static let mapUrl = "http://diadlo.dyndns.org:8888/quiz"
+    static let gameUrl = "http://diadlo.dyndns.org:8888/quiz/"
+    static let mapUrl = "http://diadlo.dyndns.org:8888/"
     static var sessionId : String = ""
     
-    static func getQuestion(type: QuestionType, onLoad : @escaping (_ question : Question) -> Void) {
+    static func attack(region: Int, onLoad : @escaping (_ question : Question) -> Void) {
         let param : Parameters = ["sessionid" : sessionId]
-        let url = URLs[type]
+        let url = gameUrl + String(region)
         
-        Alamofire.request(url!, parameters: param).responseJSON { response in
+        Alamofire.request(url, parameters: param).responseJSON { response in
             let headerFields = response.response?.allHeaderFields as? [String: String]
             let url = response.request?.url
             if (headerFields != nil && url != nil) {
@@ -35,7 +36,7 @@ class WebServer {
             
             switch (response.result) {
             case .success(let JSON):
-                let data = JSON as! NSDictionary
+                let data = JSON as! [String: Any]
                 let question = Question(data)
                 onLoad(question)
                 break;
@@ -56,12 +57,13 @@ class WebServer {
         return ""
     }
     
-    static func sendAnswer(type: QuestionType, userAnswer : Int, 
+    static func sendAnswer(userAnswer : Int,
         onLoad : @escaping (_ correct : Int) -> Void) {
 
-        let url = URLs[type]
-        let answerURL = url! + "/" + String(userAnswer)
+        let answerURL = gameUrl + String(userAnswer)
         let param : Parameters = ["sessionid" : sessionId]
+        
+        print(answerURL)
         
         Alamofire.request(answerURL, parameters: param).responseJSON { response in
             switch (response.result) {

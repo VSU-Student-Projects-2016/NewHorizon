@@ -35,7 +35,9 @@ class Map {
             ID = id
             imageUrl = image
             width = size["width"] as! Double
+            width /= 100
             height = size["height"] as! Double
+            height /= 100
             pos = Point(position)
             for p in points {
                 area.append(Point(p))

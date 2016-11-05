@@ -21,14 +21,6 @@ class ViewController: UIViewController {
         self.present(ctrl, animated: true, completion: nil)
         
         return
-        
-//        let rand = arc4random() % 2
-//        let name = rand == 0 ? "Question" : "Accuracy"
-//        let id = rand == 0 ? "QUESTION_ID" : "ACCURACY_ID"
-        
-//        let storyboard = UIStoryboard(name: name, bundle: nil)
-//        let ctrl = storyboard.instantiateViewController(withIdentifier: id)
-//        self.present(ctrl, animated: true, completion: nil)
     }
     
     func controlValueChanged(_ value: Int)

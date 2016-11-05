@@ -23,15 +23,14 @@ class QuestionController: UIViewController {
     let type = WebServer.QuestionType.ENUM
     var answer : Int = 0
     var done : Bool = false
+    public var question : Question = Question()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WebServer.getQuestion(type: type) { question in
-            self.loadImage(url: question.image)
-            self.loadQuestion(question : question)
-            self.placeholder.removeFromSuperview()
-        }
+        self.loadImage(url: question.image)
+        self.loadQuestion(question : question)
+        self.placeholder.removeFromSuperview()
     }
     
     func loadQuestion(question : Question) {
@@ -68,28 +67,28 @@ class QuestionController: UIViewController {
     
     @IBAction func answer1Touched(_ sender: UIButton) {
         answer = 1
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer2Touched(_ sender: UIButton) {
         answer = 2
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer3Touched(_ sender: UIButton) {
         answer = 3
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer4Touched(_ sender: UIButton) {
         answer = 4
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }

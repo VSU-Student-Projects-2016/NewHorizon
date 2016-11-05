@@ -13,13 +13,17 @@ class Question {
     var text : String = ""
     var answers : Array<String> = []
     
+    public init() {
+        
+    }
+    
     public init(image : String, text : String, answers : Array<String>) {
         self.image = image
         self.text = text
         self.answers = answers
     }
     
-    public init(_ data: NSDictionary) {
+    public init(_ data: [String: Any]) {
         image = data["image"] as! String
         text = data["text"] as! String
         let answersData = data["answers"]
@@ -28,5 +32,9 @@ class Question {
         } else {
             answers = []
         }
+    }
+    
+    public func isEnum() -> Bool {
+        return !answers.isEmpty
     }
 }

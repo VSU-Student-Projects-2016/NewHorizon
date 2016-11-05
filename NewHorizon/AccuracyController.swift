@@ -22,14 +22,14 @@ class AccuracyController: UIViewController {
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
     var done : Bool = false
+    public var question : Question = Question()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServer.getQuestion(type: type) { question in
-            self.loadImage(url: question.image)
-            self.loadQuestion(question : question)
-            self.placeholder.removeFromSuperview()
-        }
+        
+        self.loadImage(url: question.image)
+        self.loadQuestion(question : question)
+        self.placeholder.removeFromSuperview()
     }
     
     func loadQuestion(question : Question) {
@@ -49,7 +49,7 @@ class AccuracyController: UIViewController {
     
     @IBAction func onAnswerTouch(_ sender: UIButton) {
         answer = Int(answerField.text!)!
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }

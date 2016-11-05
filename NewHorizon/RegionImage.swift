@@ -17,7 +17,7 @@ class RegionImage: UIButton {
     }
     
     init(image: UIImage) {
-        let nonFrame = CGRect();
+        let nonFrame = CGRect(x: 0, y: 0, width: 10, height: 10);
         super.init(frame: nonFrame)
         
         setImage(image, for: [.normal])
