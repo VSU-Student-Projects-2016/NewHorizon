@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSlideDown: UIButton!
     @IBOutlet weak var settingView: UIView!
     @IBOutlet weak var viewNewHorizon: UIImageView!
+    @IBOutlet weak var btnCountOfGames: UIButton!
+    @IBOutlet weak var btnNewGame: UIButton!
     
-    var settingsPresent = true;
+    var settingsPresent = false;
     
     @IBAction func btnSlideDownMenu(_ sender: AnyObject) {
         UIView.animate(withDuration: 0.5, animations: {
@@ -29,29 +31,41 @@ class ViewController: UIViewController {
             let xPosForView:CGFloat? = self.settingView.frame.origin.x
             let yPosForView:CGFloat? = self.settingView.frame.origin.y
             
-            let btnMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height - self.btnSlideDown.frame.height
-            let viewMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height + self.btnSlideDown.frame.height
+            let btnMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height - self.btnSlideDown.frame.height + 6
+            let viewMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.settingView.frame.height + 10 //+ self.btnSlideDown.frame.height
             
             // если меню настроек отображено
             if self.settingsPresent {
                 // перемещаем его вниз
-                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! - btnMovingValue!,
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! + btnMovingValue!,
                                                  width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
-                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! - viewMovingValue!,
+                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! + viewMovingValue!,
                                                  width: self.settingView.frame.width, height: self.settingView.frame.height)
                 self.settingsPresent = false;
             }
             else {
                 // перемещаем его вверх
-                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! + btnMovingValue!,
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! - btnMovingValue!,
                                                  width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
-                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! + viewMovingValue!,
+                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! - viewMovingValue!,
                                                  width: self.settingView.frame.width, height: self.settingView.frame.height)
                 self.settingsPresent = true;
             }
         }) { (result: Bool) in
             if result {
                 // swap arrows
+                if self.settingsPresent {
+                    UIView.animate(withDuration: 0.0, animations: {
+                        self.btnSlideDown.transform = CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
+                    })
+                    self.btnCountOfGames.isHidden = true;
+                }
+                else {
+                    UIView.animate(withDuration: 0.0, animations: {
+                        self.btnSlideDown.transform = CGAffineTransform(rotationAngle: (0.0 * CGFloat(M_PI)) / 180.0)
+                    })
+                    self.btnCountOfGames.isHidden = false;
+                }
             }
         }
     }
@@ -76,6 +90,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.btnSlideDown.insert(toFront: self.settingView)
+        //self.btnSlideDown.layer.zPosition = 1;
+
         // add switch
         let music = BetterSegmentedControl(
          frame: CGRect(x: 232.0, y: 390.0, width: 100.0, height: 30.0),
