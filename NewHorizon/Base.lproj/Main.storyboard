@@ -185,6 +185,8 @@
                         <outlet property="btnInst" destination="nrA-A2-2fU" id="SD7-AQ-H5C"/>
                         <outlet property="btnSlideDown" destination="DER-Zs-jzm" id="V0b-hA-Fds"/>
                         <outlet property="labelMusic" destination="VUM-IS-8LF" id="6vN-hz-AHx"/>
+                        <outlet property="settingView" destination="a5C-qD-yL3" id="epK-u1-Vd3"/>
+                        <outlet property="viewNewHorizon" destination="Loo-ya-brV" id="ufr-z6-PG5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

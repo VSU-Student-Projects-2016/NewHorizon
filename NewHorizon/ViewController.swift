@@ -14,6 +14,47 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelMusic: UILabel!
     @IBOutlet weak var btnInst: UIButton!
+    @IBOutlet weak var btnSlideDown: UIButton!
+    @IBOutlet weak var settingView: UIView!
+    @IBOutlet weak var viewNewHorizon: UIImageView!
+    
+    var settingsPresent = true;
+    
+    @IBAction func btnSlideDownMenu(_ sender: AnyObject) {
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            let xPosForBtn:CGFloat? = self.btnSlideDown.frame.origin.x
+            let yPosForBtn:CGFloat? = self.btnSlideDown.frame.origin.y
+            
+            let xPosForView:CGFloat? = self.settingView.frame.origin.x
+            let yPosForView:CGFloat? = self.settingView.frame.origin.y
+            
+            let btnMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height - self.btnSlideDown.frame.height
+            let viewMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height + self.btnSlideDown.frame.height
+            
+            // если меню настроек отображено
+            if self.settingsPresent {
+                // перемещаем его вниз
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! - btnMovingValue!,
+                                                 width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
+                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! - viewMovingValue!,
+                                                 width: self.settingView.frame.width, height: self.settingView.frame.height)
+                self.settingsPresent = false;
+            }
+            else {
+                // перемещаем его вверх
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! + btnMovingValue!,
+                                                 width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
+                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! + viewMovingValue!,
+                                                 width: self.settingView.frame.width, height: self.settingView.frame.height)
+                self.settingsPresent = true;
+            }
+        }) { (result: Bool) in
+            if result {
+                // swap arrows
+            }
+        }
+    }
     
     func controlValueChanged(_ value: Int)
     {
