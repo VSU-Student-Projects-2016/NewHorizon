@@ -18,7 +18,7 @@ class MapController: UIViewController {
         let screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
-        
+
         WebServer.getMap() { map in
             self.loadImage(url: map.backgroundUrl)
             for region in map.regions {
@@ -43,7 +43,7 @@ class MapController: UIViewController {
             let urlData = URL(string: region.imageUrl)
             let data = try Data(contentsOf: urlData!)
             let image = UIImage(data: data)
-            let imageView = UIImageView(image: image)
+            let imageView = RegionImage(image: image!)
             view.addSubview(imageView)
     
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,13 +51,17 @@ class MapController: UIViewController {
             setPosition(imageView, x: region.pos.x, y: region.pos.y)
             setSize(imageView, w: region.width, h: region.height)
             
+            imageView.touchDown = { image in
+                print(region.ID);
+            }
+            
             self.view.layoutIfNeeded()
         } catch {
             print("Can't set image")
         }
     }
     
-    func setPosition(_ image : UIImageView, x : Double, y : Double) {
+    func setPosition(_ image : Any, x : Double, y : Double) {
         let _x = CGFloat(x) * screenWidth
         let _y = CGFloat(y) * screenHeight
         
@@ -67,7 +71,7 @@ class MapController: UIViewController {
         NSLayoutConstraint.activate([xConst, yConst])
     }
     
-    func setSize(_ image : UIImageView, w : Double, h : Double) {
+    func setSize(_ image : Any, w : Double, h : Double) {
         let _w = CGFloat(w) * screenWidth
         let _h = CGFloat(h) * screenHeight
         

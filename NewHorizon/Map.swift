@@ -24,13 +24,15 @@ class Map {
     }
     
     public class Region {
+        var ID : Int
         var imageUrl : String = ""
         var pos : Point
         var width : Double = 0
         var height : Double = 0
         var area : Array<Point> = []
         
-        public init(size : NSDictionary, position: NSDictionary, image: String, points : Array<NSDictionary>) {
+        public init(id : Int, size : NSDictionary, position: NSDictionary, image: String, points : Array<NSDictionary>) {
+            ID = id
             imageUrl = image
             width = size["width"] as! Double
             height = size["height"] as! Double
@@ -60,7 +62,7 @@ class Map {
             let pos = regionPoses[i]
             let image = regionImages[i]
             let area = regionAreas[i]
-            let region = Region(size: size, position: pos, image: image, points: area)
+            let region = Region(id: i, size: size, position: pos, image: image, points: area)
             regions.append(region)
         }
     }

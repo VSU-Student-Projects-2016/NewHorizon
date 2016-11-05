@@ -23,6 +23,7 @@
 		AEF5F1971D9FD24A00C224DE /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF5F1961D9FD24A00C224DE /* Question.storyboard */; };
 		AEF5F1991D9FD4D100C224DE /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5F1981D9FD4D100C224DE /* QuestionController.swift */; };
 		AEFACA121DBB975C00E8B2A6 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFACA111DBB975C00E8B2A6 /* Map.swift */; };
+		AEFD5ABE1DCDE74C001AB4E4 /* RegionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFD5ABD1DCDE74C001AB4E4 /* RegionImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AEF5F1961D9FD24A00C224DE /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		AEF5F1981D9FD4D100C224DE /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		AEFACA111DBB975C00E8B2A6 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		AEFD5ABD1DCDE74C001AB4E4 /* RegionImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				AEA9EE3A1D96893D00D6FC68 /* Info.plist */,
 				AEA9EE321D96893D00D6FC68 /* NewHorizon.xcdatamodeld */,
 				AEA9EE371D96893D00D6FC68 /* LaunchScreen.storyboard */,
+				AEFD5ABD1DCDE74C001AB4E4 /* RegionImage.swift */,
 				AEA9EE2B1D96893D00D6FC68 /* AppDelegate.swift */,
 				AEFACA111DBB975C00E8B2A6 /* Map.swift */,
 				AEF270AE1D96AF61008886AE /* Question.swift */,
@@ -248,6 +251,7 @@
 				AEF270AF1D96AF61008886AE /* Question.swift in Sources */,
 				AEA9EE2E1D96893D00D6FC68 /* ViewController.swift in Sources */,
 				AEFACA121DBB975C00E8B2A6 /* Map.swift in Sources */,
+				AEFD5ABE1DCDE74C001AB4E4 /* RegionImage.swift in Sources */,
 				AEA9EE2C1D96893D00D6FC68 /* AppDelegate.swift in Sources */,
 				AEA9EE341D96893D00D6FC68 /* NewHorizon.xcdatamodeld in Sources */,
 				AEF270AD1D96AD03008886AE /* WebServer.swift in Sources */,
