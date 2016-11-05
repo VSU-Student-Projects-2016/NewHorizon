@@ -31,8 +31,8 @@ class ViewController: UIViewController {
             let xPosForView:CGFloat? = self.settingView.frame.origin.x
             let yPosForView:CGFloat? = self.settingView.frame.origin.y
             
-            let btnMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height - self.btnSlideDown.frame.height + 6
-            let viewMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.settingView.frame.height + 10 //+ self.btnSlideDown.frame.height
+            let btnMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height - self.btnSlideDown.frame.height + 5
+            let viewMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.settingView.frame.height + 10
             
             // если меню настроек отображено
             if self.settingsPresent {
@@ -41,6 +41,8 @@ class ViewController: UIViewController {
                                                  width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
                 self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! + viewMovingValue!,
                                                  width: self.settingView.frame.width, height: self.settingView.frame.height)
+                self.btnSlideDown.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0) //CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
+
                 self.settingsPresent = false;
             }
             else {
@@ -49,25 +51,21 @@ class ViewController: UIViewController {
                                                  width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
                 self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! - viewMovingValue!,
                                                  width: self.settingView.frame.width, height: self.settingView.frame.height)
+                self.btnSlideDown.transform =  CGAffineTransform(scaleX: 1.0, y: -1.0) //CGAffineTransform(rotationAngle: (0.0 * CGFloat(M_PI)) / 180.0)
+
                 self.settingsPresent = true;
             }
         }) { (result: Bool) in
             if result {
-                // swap arrows
                 if self.settingsPresent {
-                    UIView.animate(withDuration: 0.0, animations: {
-                        self.btnSlideDown.transform = CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
-                    })
                     self.btnCountOfGames.isHidden = true;
                 }
                 else {
-                    UIView.animate(withDuration: 0.0, animations: {
-                        self.btnSlideDown.transform = CGAffineTransform(rotationAngle: (0.0 * CGFloat(M_PI)) / 180.0)
-                    })
                     self.btnCountOfGames.isHidden = false;
                 }
             }
         }
+        //UIView.animate(withDuration: 0.2, delay: 0.05, options: [UIViewAnimationOptions.curveEaseOut], animations: {
     }
     
     func controlValueChanged(_ value: Int)
@@ -81,10 +79,6 @@ class ViewController: UIViewController {
         self.present(ctrl, animated: true, completion: nil)
         
         return
-    }
-    
-    @IBAction func btnSlideMenu(_ sender: AnyObject) {
-        //view.addSubview(SettingsViewController.vi)
     }
     
     override func viewDidLoad() {
