@@ -9,8 +9,6 @@
 import UIKit
 
 class MapController: UIViewController {
-    @IBOutlet weak var backImage: UIImageView!
-    
     var screenWidth : CGFloat = 0
     var screenHeight : CGFloat = 0
     var regionsViews : Array<RegionImage> = []
@@ -23,19 +21,20 @@ class MapController: UIViewController {
         screenWidth = screenSize.width
         screenHeight = screenSize.height
 
+        let backImage = RegionImage(image: UIImage(named: "background")!)
+        view.addSubview(backImage)
+        
+        backImage.translatesAutoresizingMaskIntoConstraints = false
+        setPosition(backImage, x: 0, y: 0)
+        setSize(backImage, w: 1.0, h: 1.0)
+        
+        self.view.layoutIfNeeded()
+        
+        backImage.touchDown = { image in
+            self.updateMap()
+        }
         
         updateMap()
-    }
-    
-    func loadImage(url : String) {
-        do {
-            let urlData = URL(string: url)
-            let data = try Data(contentsOf: urlData!)
-            let image = UIImage(data: data)
-            backImage.image = image
-        } catch {
-            print("Can't set image")
-        }
     }
     
     func updateMap() {
