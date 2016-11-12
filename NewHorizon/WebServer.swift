@@ -19,21 +19,16 @@ class WebServer {
     ]
     
     static let gameUrl = "http://diadlo.dyndns.org:8888/quiz/"
-    static let mapUrl = "http://diadlo.dyndns.org:8888/"
+    static let mapUrl = "http://diadlo.dyndns.org:8888/getMap/"
+    static let initUrl = "http://diadlo.dyndns.org:8888/"
     static var sessionId : String = ""
     
     static func attack(region: Int, onLoad : @escaping (_ question : Question) -> Void) {
         let param : Parameters = ["sessionid" : sessionId]
         let url = gameUrl + String(region)
         
+        print(url + " : " + sessionId)
         Alamofire.request(url, parameters: param).responseJSON { response in
-            let headerFields = response.response?.allHeaderFields as? [String: String]
-            let url = response.request?.url
-            if (headerFields != nil && url != nil) {
-                let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields!, for: url!)
-                sessionId = getSessionId(cookies: cookies)
-            }
-            
             switch (response.result) {
             case .success(let JSON):
                 let data = JSON as! [String: Any]
@@ -49,7 +44,7 @@ class WebServer {
     
     static func getSessionId(cookies : [HTTPCookie]) -> String {
         for cookie in cookies {
-            if (cookie.name == "sesstionid") {
+            if (cookie.name == "sessionid") {
                 return cookie.value
             }
         }
@@ -63,7 +58,7 @@ class WebServer {
         let answerURL = gameUrl + String(userAnswer)
         let param : Parameters = ["sessionid" : sessionId]
         
-        print(answerURL)
+        print(answerURL + " : " + sessionId)
         
         Alamofire.request(answerURL, parameters: param).responseJSON { response in
             switch (response.result) {
@@ -81,8 +76,18 @@ class WebServer {
     
     static func getMap(onLoad: @escaping (_ map: Map) -> Void) {
         let param : Parameters = ["sessionid" : sessionId]
+        let url = sessionId == "" ? initUrl : mapUrl
         
-        Alamofire.request(mapUrl, parameters: param).responseJSON { response in
+        
+        print(url + " : " + sessionId)
+        Alamofire.request(url, parameters: param).responseJSON { response in
+            let headerFields = response.response?.allHeaderFields as? [String: String]
+            let url = response.request?.url
+            if (headerFields != nil && url != nil) {
+                let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields!, for: url!)
+                sessionId = getSessionId(cookies: cookies)
+            }
+            
             switch (response.result) {
             case .success(let JSON):
                 let data = JSON as! NSDictionary

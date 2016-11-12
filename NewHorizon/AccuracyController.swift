@@ -19,11 +19,13 @@ class AccuracyController: UIViewController {
     @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var correctAnswer: UILabel!
     
+    
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
     var done : Bool = false
     public var question : Question = Question()
-    
+    public var onQuestuionEnd : (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +63,7 @@ class AccuracyController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (done) {
+            onQuestuionEnd!();
             self.dismiss(animated: true)
         }
     }

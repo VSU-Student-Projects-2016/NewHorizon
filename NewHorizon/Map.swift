@@ -25,27 +25,28 @@ class Map {
     
     public class Region {
         var ID : Int
-        var imageUrl : String = ""
+        var type : Int
+        var owner: Int
         var pos : Point
         var width : Double = 0
         var height : Double = 0
         var area : Array<Point> = []
         
-        public init(id : Int, size : NSDictionary, position: NSDictionary, image: String, points : Array<NSDictionary>) {
-            ID = id
-            imageUrl = image
+        public init(id : Int, owner: Int, size : NSDictionary, position: NSDictionary, type : Int, points : Array<NSDictionary>) {
+            self.ID = id
+            self.type = type
+            self.owner = owner
+            self.pos = Point(position)
             width = size["width"] as! Double
             width /= 100
             height = size["height"] as! Double
             height /= 100
-            pos = Point(position)
             for p in points {
                 area.append(Point(p))
             }
         }
     }
     
-    var backgroundUrl : String = ""
     var pos : Point = Point()
     var width : Double = 0
     var height : Double = 0
@@ -53,18 +54,21 @@ class Map {
     var regions : Array<Region> = []
     
     public init(_ data: NSDictionary) {
-        backgroundUrl = data["bg-image"] as! String
-        let regionSizes = data["region_sizes"] as! Array<NSDictionary>
+        let regionSizes = data["region-sizes"] as! Array<NSDictionary>
         let regionPoses = data["region-poses"] as! Array<NSDictionary>
-        let regionImages = data["region-images"] as! Array<String>
+        let regionTypes = data["region-types"] as! Array<Int>
         let regionAreas = data["region-areas"] as! Array<Array<NSDictionary>>
+        let regionOwner = data["region-owner"] as! Array<Int>
+        
         
         for i in (0..<regionSizes.count) {
             let size = regionSizes[i]
             let pos = regionPoses[i]
-            let image = regionImages[i]
+            let type = regionTypes[i]
             let area = regionAreas[i]
-            let region = Region(id: i, size: size, position: pos, image: image, points: area)
+            let owner = regionOwner[i]
+            
+            let region = Region(id: i, owner: owner, size: size, position: pos, type: type, points: area)
             regions.append(region)
         }
     }

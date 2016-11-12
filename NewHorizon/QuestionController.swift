@@ -24,6 +24,7 @@ class QuestionController: UIViewController {
     var answer : Int = 0
     var done : Bool = false
     public var question : Question = Question()
+    public var onQuestuionEnd : (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class QuestionController: UIViewController {
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
     }
-    
+
     func loadQuestion(question : Question) {
         questionText.text = question.text
         button0.setTitle(question.answers[0], for: UIControlState.normal)
@@ -61,6 +62,7 @@ class QuestionController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (done) {
+            onQuestuionEnd!()
             self.dismiss(animated: true)
         }
     }

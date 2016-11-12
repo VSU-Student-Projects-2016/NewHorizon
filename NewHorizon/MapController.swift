@@ -13,18 +13,18 @@ class MapController: UIViewController {
     
     var screenWidth : CGFloat = 0
     var screenHeight : CGFloat = 0
+    var regionsViews : Array<RegionImage> = []
+    let regionImages = [ UIImage(named: "none"), UIImage(named: "none"),
+                         UIImage(named: "player"), UIImage(named: "playerCapital"),
+                         UIImage(named: "enemy"), UIImage(named: "enemyCapital") ]
     
     override func viewDidLoad() {
         let screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
 
-        WebServer.getMap() { map in
-            self.loadImage(url: map.backgroundUrl)
-            for region in map.regions {
-                self.loadRegion(region)
-            }
-        }
+        
+        updateMap()
     }
     
     func loadImage(url : String) {
@@ -38,42 +38,53 @@ class MapController: UIViewController {
         }
     }
     
-    func loadRegion(_ region : Map.Region) {
-        do {
-            let urlData = URL(string: region.imageUrl)
-            let data = try Data(contentsOf: urlData!)
-            let image = UIImage(data: data)
-            let imageView = RegionImage(image: image!)
-            view.addSubview(imageView)
-    
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            
-            setPosition(imageView, x: region.pos.x, y: region.pos.y)
-            setSize(imageView, w: region.width, h: region.height)
-            
-            imageView.touchDown = { image in
-                WebServer.attack(region: region.ID, onLoad: { question in
-                    let name = question.isEnum() ? "Question" : "Accuracy"
-                    let id = question.isEnum() ? "QUESTION_ID" : "ACCURACY_ID"
-                    
-                    let storyboard = UIStoryboard(name: name, bundle: nil)
-                    let ctrl = storyboard.instantiateViewController(withIdentifier: id)
-                    // TODO: Add interface for QuestiuonController
-                    if question.isEnum() {
-                        let enumCtrl = ctrl as! QuestionController
-                        enumCtrl.question = question
-                    } else {
-                        let enumCtrl = ctrl as! AccuracyController
-                        enumCtrl.question = question
-                    }
-                    self.present(ctrl, animated: true, completion: nil)
-                })
-            }
-            
-            self.view.layoutIfNeeded()
-        } catch {
-            print("Can't set image")
+    func updateMap() {
+        for region in regionsViews {
+            region.removeFromSuperview();
         }
+        
+        WebServer.getMap() { map in
+            for region in map.regions {
+                self.loadRegion(region)
+            }
+        }
+    }
+    
+    func loadRegion(_ region : Map.Region) {
+        let id = region.owner * 2 + region.type
+        let image = regionImages[id]
+        let imageView = RegionImage(image: image!)
+        regionsViews.append(imageView)
+        view.addSubview(imageView)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        setPosition(imageView, x: region.pos.x, y: region.pos.y)
+        setSize(imageView, w: region.width, h: region.height)
+
+        imageView.touchDown = { image in
+            WebServer.attack(region: region.ID, onLoad: { question in
+                let name = question.isEnum() ? "Question" : "Accuracy"
+                let id = question.isEnum() ? "QUESTION_ID" : "ACCURACY_ID"
+
+                let storyboard = UIStoryboard(name: name, bundle: nil)
+                let ctrl = storyboard.instantiateViewController(withIdentifier: id)
+
+                // TODO: Add interface for QuestiuonController
+                if question.isEnum() {
+                    let enumCtrl = ctrl as! QuestionController
+                    enumCtrl.question = question
+                    enumCtrl.onQuestuionEnd = self.updateMap
+                } else {
+                    let enumCtrl = ctrl as! AccuracyController
+                    enumCtrl.question = question
+                    enumCtrl.onQuestuionEnd = self.updateMap
+                }
+                self.present(ctrl, animated: true, completion: nil)
+            })
+        }
+
+        self.view.layoutIfNeeded()
     }
     
     func setPosition(_ image : Any, x : Double, y : Double) {
