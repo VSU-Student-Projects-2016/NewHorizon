@@ -29,7 +29,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title-3" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-ya-brV">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="258:100" id="PXP-JY-pMp"/>
+                                    <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="265:100" id="PXP-JY-pMp"/>
                                     <constraint firstAttribute="width" secondItem="Loo-ya-brV" secondAttribute="height" multiplier="2:1" id="f6V-Qy-ytK"/>
                                 </constraints>
                                 <variation key="default">
@@ -104,35 +104,46 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5C-qD-yL3">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5C-qD-yL3">
+                                <frame key="frameInset" minX="223" minY="419" width="513" height="195"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДАЙ ПЯТЬ!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-Gt-nKW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ДАЙ ПЯТЬ!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-Gt-nKW">
+                                        <frame key="frameInset" minX="50" minY="-60" width="138" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-A2-2fU">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-A2-2fU">
+                                        <frame key="frameInset" minX="385" minY="-65" width="35" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="HTu-uB-Br0">
-                                                <variation key="heightClass=compact-widthClass=compact" constant="40"/>
+                                                <variation key="heightClass=compact-widthClass=compact" constant="35"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                             </constraint>
                                             <constraint firstAttribute="height" constant="45" id="TWY-D3-YNl">
-                                                <variation key="heightClass=compact-widthClass=compact" constant="40"/>
+                                                <variation key="heightClass=compact-widthClass=compact" constant="35"/>
                                                 <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                             </constraint>
                                         </constraints>
                                         <state key="normal" backgroundImage="inst"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2J-cw-NfR">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2J-cw-NfR">
+                                        <frame key="frameInset" minX="330" minY="-65" width="35" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" backgroundImage="vk"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МУЗЫКА" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-IS-8LF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="МУЗЫКА" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-IS-8LF">
+                                        <frame key="frameInset" minX="50" minY="30" width="125" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,10 +151,14 @@
                                     <constraint firstAttribute="bottom" secondItem="nrA-A2-2fU" secondAttribute="bottom" constant="30" id="3sE-Ah-ovN"/>
                                     <constraint firstItem="nrA-A2-2fU" firstAttribute="width" secondItem="s2J-cw-NfR" secondAttribute="width" id="DfB-cJ-v1A"/>
                                     <constraint firstItem="nrA-A2-2fU" firstAttribute="leading" secondItem="s2J-cw-NfR" secondAttribute="trailing" constant="20" id="Mmj-id-ZoC"/>
-                                    <constraint firstItem="SsB-Gt-nKW" firstAttribute="leading" secondItem="a5C-qD-yL3" secondAttribute="leading" constant="50" id="O9V-wZ-JpE"/>
+                                    <constraint firstItem="SsB-Gt-nKW" firstAttribute="leading" secondItem="a5C-qD-yL3" secondAttribute="leading" constant="25" id="O9V-wZ-JpE">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                                    </constraint>
                                     <constraint firstItem="SsB-Gt-nKW" firstAttribute="leading" secondItem="VUM-IS-8LF" secondAttribute="leading" id="Xuq-B9-JZN"/>
                                     <constraint firstItem="nrA-A2-2fU" firstAttribute="height" secondItem="s2J-cw-NfR" secondAttribute="height" id="fdM-6y-eY2"/>
-                                    <constraint firstAttribute="trailing" secondItem="nrA-A2-2fU" secondAttribute="trailing" constant="45" id="jxW-gx-rWD"/>
+                                    <constraint firstAttribute="trailing" secondItem="nrA-A2-2fU" secondAttribute="trailing" constant="45" id="jxW-gx-rWD">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                    </constraint>
                                     <constraint firstItem="nrA-A2-2fU" firstAttribute="bottom" secondItem="s2J-cw-NfR" secondAttribute="bottom" id="omn-u3-5Na"/>
                                     <constraint firstItem="VUM-IS-8LF" firstAttribute="top" secondItem="a5C-qD-yL3" secondAttribute="top" constant="30" id="pY2-6z-XWV"/>
                                     <constraint firstItem="nrA-A2-2fU" firstAttribute="bottom" secondItem="SsB-Gt-nKW" secondAttribute="bottom" id="rtI-qI-aXD"/>
@@ -152,7 +167,6 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="a5C-qD-yL3" firstAttribute="top" secondItem="Loo-ya-brV" secondAttribute="bottom" constant="220" id="2Hz-hI-Y0o"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="top" secondItem="gu8-U9-a4d" secondAttribute="bottom" constant="-25" id="4gx-IH-LaI"/>
                             <constraint firstItem="Loo-ya-brV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5VU-oE-VxP"/>
                             <constraint firstItem="8nt-p8-xJ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MpF-d5-Wae"/>
@@ -176,16 +190,15 @@
                             <constraint firstItem="DER-Zs-jzm" firstAttribute="centerX" secondItem="Loo-ya-brV" secondAttribute="centerX" id="s18-QM-T3X"/>
                             <constraint firstItem="2qu-Vb-omM" firstAttribute="height" secondItem="hXH-6j-dO9" secondAttribute="height" id="sIs-qg-xOJ"/>
                             <constraint firstItem="hXH-6j-dO9" firstAttribute="centerX" secondItem="2qu-Vb-omM" secondAttribute="centerX" id="wOO-BJ-r1t"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a5C-qD-yL3" secondAttribute="bottom" constant="-200" id="zVc-oe-Tnb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DER-Zs-jzm" secondAttribute="bottom" constant="8" id="zaP-j6-4Sw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnCountOfGames" destination="gu8-U9-a4d" id="j5q-EA-Hyw"/>
-                        <outlet property="btnInst" destination="nrA-A2-2fU" id="SD7-AQ-H5C"/>
+                        <outlet property="btnInst" destination="nrA-A2-2fU" id="jec-M0-tuA"/>
                         <outlet property="btnNewGame" destination="2qu-Vb-omM" id="pcj-ds-WXa"/>
                         <outlet property="btnSlideDown" destination="DER-Zs-jzm" id="V0b-hA-Fds"/>
-                        <outlet property="labelMusic" destination="VUM-IS-8LF" id="6vN-hz-AHx"/>
+                        <outlet property="labelMusic" destination="VUM-IS-8LF" id="sCW-pO-Sfj"/>
                         <outlet property="settingView" destination="a5C-qD-yL3" id="epK-u1-Vd3"/>
                         <outlet property="viewNewHorizon" destination="Loo-ya-brV" id="ufr-z6-PG5"/>
                     </connections>
