@@ -19,17 +19,19 @@ class AccuracyController: UIViewController {
     @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var correctAnswer: UILabel!
     
+    
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
     var done : Bool = false
-    
+    public var question : Question = Question()
+    public var onQuestuionEnd : (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        WebServer.getQuestion(type: type) { question in
-            self.loadImage(url: question.image)
-            self.loadQuestion(question : question)
-            self.placeholder.removeFromSuperview()
-        }
+        
+        self.loadImage(url: question.image)
+        self.loadQuestion(question : question)
+        self.placeholder.removeFromSuperview()
     }
     
     func loadQuestion(question : Question) {
@@ -49,7 +51,7 @@ class AccuracyController: UIViewController {
     
     @IBAction func onAnswerTouch(_ sender: UIButton) {
         answer = Int(answerField.text!)!
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
@@ -61,6 +63,7 @@ class AccuracyController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (done) {
+            onQuestuionEnd!();
             self.dismiss(animated: true)
         }
     }

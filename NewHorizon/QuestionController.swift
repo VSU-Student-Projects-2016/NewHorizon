@@ -23,17 +23,17 @@ class QuestionController: UIViewController {
     let type = WebServer.QuestionType.ENUM
     var answer : Int = 0
     var done : Bool = false
+    public var question : Question = Question()
+    public var onQuestuionEnd : (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WebServer.getQuestion(type: type) { question in
-            self.loadImage(url: question.image)
-            self.loadQuestion(question : question)
-            self.placeholder.removeFromSuperview()
-        }
+        self.loadImage(url: question.image)
+        self.loadQuestion(question : question)
+        self.placeholder.removeFromSuperview()
     }
-    
+
     func loadQuestion(question : Question) {
         questionText.text = question.text
         button0.setTitle(question.answers[0], for: UIControlState.normal)
@@ -62,34 +62,35 @@ class QuestionController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (done) {
+            onQuestuionEnd!()
             self.dismiss(animated: true)
         }
     }
     
     @IBAction func answer1Touched(_ sender: UIButton) {
         answer = 1
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer2Touched(_ sender: UIButton) {
         answer = 2
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer3Touched(_ sender: UIButton) {
         answer = 3
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
     
     @IBAction func answer4Touched(_ sender: UIButton) {
         answer = 4
-        WebServer.sendAnswer(type: type, userAnswer: answer) { correct in
+        WebServer.sendAnswer(userAnswer: answer) { correct in
             self.didAnswerSend(correct)
         }
     }
