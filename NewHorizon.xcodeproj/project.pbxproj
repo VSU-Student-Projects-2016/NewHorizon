@@ -102,6 +102,8 @@
 			children = (
 				AEB2A4061DB2693A006A5302 /* Accuracy.storyboard */,
 				AEB2A4071DB2693A006A5302 /* AccuracyController.swift */,
+				AEA9EE2B1D96893D00D6FC68 /* AppDelegate.swift */,
+				AEA9EE2D1D96893D00D6FC68 /* ViewController.swift */,
 				AEA9EE2F1D96893D00D6FC68 /* Main.storyboard */,
 				AEA9EE2D1D96893D00D6FC68 /* ViewController.swift */,
 				AE1F99D71DC4AA17004E25A9 /* MapView.storyboard */,

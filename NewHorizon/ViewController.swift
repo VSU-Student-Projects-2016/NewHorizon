@@ -12,8 +12,72 @@ import BetterSegmentedControl
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var labelMusic: UILabel!
     @IBOutlet weak var btnInst: UIButton!
+    @IBOutlet weak var labelMusic: UILabel!
+    @IBOutlet weak var btnSlideDown: UIButton!
+    @IBOutlet weak var settingView: UIView!
+    @IBOutlet weak var viewNewHorizon: UIImageView!
+    @IBOutlet weak var btnCountOfGames: UIButton!
+    @IBOutlet weak var btnNewGame: UIButton!
+    @IBOutlet weak var constraintLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintBottomSlide: NSLayoutConstraint!
+    
+    var settingsPresent = false;
+    
+    @IBAction func btnSlideDownMenu(_ sender: AnyObject) {
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.btnCountOfGames.isHidden = false;
+
+            let xPosForBtn = self.btnSlideDown.frame.origin.x
+            let yPosForBtn = self.btnSlideDown.frame.origin.y
+            
+            let xPosForView = self.settingView.frame.origin.x
+            let yPosForView = self.settingView.frame.origin.y
+            
+             //+ self.btnSlideDown.frame.height
+            //let btnMovingValue = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height
+                //- self.btnSlideDown.frame.height + self.btnSlideDown.frame.height/3 + 2 //+ 5
+            
+            let btnMovingValue = self.settingView.frame.height - self.constraintBottomSlide.constant //- self.btnSlideDown.frame.height
+            let viewMovingValue = self.settingView.frame.height //self.viewNewHorizon.frame.origin.y + self.settingView.frame.height //+ 10
+            
+            // если меню настроек отображено
+            if self.settingsPresent {
+                // перемещаем его вниз
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn, y: yPosForBtn + btnMovingValue,
+                                                 width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
+                self.settingView.frame = CGRect(x: xPosForView, y: yPosForView + viewMovingValue,
+                                                 width: self.settingView.frame.width, height: self.settingView.frame.height)
+                self.btnSlideDown.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0) //CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
+
+                self.settingsPresent = false;
+            }
+            else {
+                // перемещаем его вверх
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn, y: yPosForBtn - btnMovingValue,
+                                                 width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
+                self.settingView.frame = CGRect(x: xPosForView, y: yPosForView - viewMovingValue,
+                                                 width: self.settingView.frame.width, height: self.settingView.frame.height)
+                self.btnSlideDown.transform =  CGAffineTransform(scaleX: 1.0, y: -1.0) //CGAffineTransform(rotationAngle: (0.0 * CGFloat(M_PI)) / 180.0)
+
+                self.settingsPresent = true;
+            }
+        }) { (result: Bool) in
+            if result {
+                if self.settingsPresent {
+                    self.btnCountOfGames.isHidden = true;
+                    //self.btnNewGame.isHidden = true;
+                }
+            }
+        }
+        //UIView.animate(withDuration: 0.2, delay: 0.05, options: [UIViewAnimationOptions.curveEaseOut], animations: {
+    }
+    
+    func controlValueChanged(_ value: Int)
+    {
+        print(value)
+    }
     
     @IBAction func OnNewGameTouch(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "MapView", bundle: nil)
@@ -23,40 +87,54 @@ class ViewController: UIViewController {
         return
     }
     
-    func controlValueChanged(_ value: Int)
-    {
-        print(value)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: split on methods
+        // width of switch
+        let width = 2 * self.btnInst.frame.width + self.constraintLeading.constant // правильно!
+
+        // add switch
         let music = BetterSegmentedControl(
-            frame: CGRect(x: 232.0, y: 370.0, width: 90.0, height: 20.0),
-            titles: ["НЕТ", "ДА"],
-            index: 1,
-            backgroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00),
-            titleColor: .white,
-            indicatorViewBackgroundColor: UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.00),
-            selectedTitleColor: .white)
-        music.titleFont = UIFont(name: "HelveticaNeue", size: 20.0)!
-        music.selectedTitleFont = UIFont(name: "HelveticaNeue-Medium", size: 20.0)!
-        music.addTarget(self, action: #selector(ViewController.controlValueChanged(_:)), for: .valueChanged)
-        view.addSubview(music)
+         frame: CGRect(x: 232.0, y: 390.0, width: width, height: 30.0),
+         titles: ["НЕТ", "ДА"],
+         index: 1,
+         backgroundColor: UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.00),
+         titleColor: .black,
+         indicatorViewBackgroundColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00),
+         selectedTitleColor: .black)
+         
+         music.titleFont = UIFont(name: "HelveticaNeue", size: 20.0)!
+         music.selectedTitleFont = UIFont(name: "HelveticaNeue-Medium", size: 20.0)!
+         music.addTarget(self, action: #selector(controlValueChanged(_:)), for: .valueChanged)
+         self.settingView.addSubview(music)
+         
+         music.translatesAutoresizingMaskIntoConstraints = false
         
-        music.translatesAutoresizingMaskIntoConstraints = false
-
-        let leadingConstraint = NSLayoutConstraint(item: labelMusic, attribute: .leading, relatedBy: .equal, toItem: music, attribute: .leading, multiplier: 1.0, constant: 0.0)
-        let bottomConstraint = NSLayoutConstraint(item: music, attribute: .bottom, relatedBy: .equal, toItem: btnInst, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-
-        let widthConstraint = NSLayoutConstraint(item: music, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 90)
-        let heightConstraint = NSLayoutConstraint(item: music, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30)
-
-        let verticalSpacingConstraint = NSLayoutConstraint(item: labelMusic, attribute: .bottom, relatedBy: .equal, toItem: music, attribute: .top, multiplier: 1.0, constant: -4.0)
+         // add constraints for switch
+         let trailingConstraint = NSLayoutConstraint(item: music, attribute: .trailing, relatedBy: .equal, toItem: btnInst, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+         let topConstraint = NSLayoutConstraint(item: music, attribute: .top, relatedBy: .equal, toItem: labelMusic, attribute: .top, multiplier: 1.0, constant: 0.0)
+         
+         let widthConstraint = NSLayoutConstraint(item: music, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
+         let heightConstraint = NSLayoutConstraint(item: music, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30)
+         
+         //let verticalSpacingConstraint = NSLayoutConstraint(item: labelMusic, attribute: .bottom, relatedBy: .equal, toItem: music, attribute: .top, multiplier: 1.0, constant: -4.0)
+         
+         NSLayoutConstraint.activate([topConstraint, trailingConstraint, widthConstraint, heightConstraint])
+         self.settingView.layoutIfNeeded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        NSLayoutConstraint.activate([bottomConstraint, leadingConstraint, widthConstraint, heightConstraint, verticalSpacingConstraint])
-        self.view.layoutIfNeeded()
+        // add constraints for settingsView
+        let height = self.view.frame.size.height - self.viewNewHorizon.frame.size.height
+            - self.btnSlideDown.frame.size.height //+ self.constraintBottomSlide.constant
+    
+        let viewHeightConstraint = NSLayoutConstraint(item: settingView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
+        let viewBottomConstraint = NSLayoutConstraint(item: settingView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: height)
+        //let viewTopConstraint = NSLayoutConstraint(item: settingView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: height)
+        
+        NSLayoutConstraint.activate([viewHeightConstraint, viewBottomConstraint]) //, viewTopConstraint])
     }
 }
 
