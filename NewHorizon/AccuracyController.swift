@@ -1,5 +1,5 @@
 //
-//  QuestionController.swift
+//  EnumController.swift
 //  NewHorizon
 //
 //  Created by xcode on 01.10.16.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class AccuracyController: UIViewController {
+class AccuracyController: UIViewController, QuestionController {
 
     @IBOutlet weak var questionText: UILabel!
     
@@ -29,8 +29,18 @@ class AccuracyController: UIViewController {
     var answer : Int = 0
     var done : Bool = false
     public var question : Question = Question()
-    public var onQuestuionEnd : (() -> Void)?
 
+    var questuionEnd : (() -> Void)?
+    var onQuestuionEnd : (() -> Void) {
+        get {
+            return questuionEnd!
+        }
+        
+        set(value) {
+            questuionEnd = value
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +71,7 @@ class AccuracyController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (done) {
-            onQuestuionEnd!();
+            onQuestuionEnd();
             self.dismiss(animated: true)
         }
     }

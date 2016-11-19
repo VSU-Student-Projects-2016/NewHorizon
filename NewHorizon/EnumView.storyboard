@@ -12,7 +12,7 @@
         <!--Question Controller-->
         <scene sceneID="3WP-R2-zKx">
             <objects>
-                <viewController storyboardIdentifier="QUESTION_ID" id="D4z-Ot-Swn" customClass="QuestionController" customModule="NewHorizon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QUESTION_ID" id="D4z-Ot-Swn" customClass="EnumController" customModule="NewHorizon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tog-d6-u7O"/>
                         <viewControllerLayoutGuide type="bottom" id="Ztx-Ag-uWA"/>
