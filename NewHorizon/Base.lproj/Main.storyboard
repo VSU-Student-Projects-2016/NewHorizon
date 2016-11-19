@@ -198,6 +198,8 @@
                         <outlet property="btnInst" destination="nrA-A2-2fU" id="jec-M0-tuA"/>
                         <outlet property="btnNewGame" destination="2qu-Vb-omM" id="pcj-ds-WXa"/>
                         <outlet property="btnSlideDown" destination="DER-Zs-jzm" id="V0b-hA-Fds"/>
+                        <outlet property="constraintBottomSlide" destination="zaP-j6-4Sw" id="hU3-er-Gmo"/>
+                        <outlet property="constraintLeading" destination="Mmj-id-ZoC" id="pS9-4K-HWK"/>
                         <outlet property="labelMusic" destination="VUM-IS-8LF" id="sCW-pO-Sfj"/>
                         <outlet property="settingView" destination="a5C-qD-yL3" id="epK-u1-Vd3"/>
                         <outlet property="viewNewHorizon" destination="Loo-ya-brV" id="ufr-z6-PG5"/>

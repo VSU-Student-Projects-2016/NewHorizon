@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewNewHorizon: UIImageView!
     @IBOutlet weak var btnCountOfGames: UIButton!
     @IBOutlet weak var btnNewGame: UIButton!
+    @IBOutlet weak var constraintLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintBottomSlide: NSLayoutConstraint!
     
     var settingsPresent = false;
     
@@ -27,23 +29,25 @@ class ViewController: UIViewController {
             
             self.btnCountOfGames.isHidden = false;
 
-            let xPosForBtn:CGFloat? = self.btnSlideDown.frame.origin.x
-            let yPosForBtn:CGFloat? = self.btnSlideDown.frame.origin.y
+            let xPosForBtn = self.btnSlideDown.frame.origin.x
+            let yPosForBtn = self.btnSlideDown.frame.origin.y
             
-            let xPosForView:CGFloat? = self.settingView.frame.origin.x
-            let yPosForView:CGFloat? = self.settingView.frame.origin.y
+            let xPosForView = self.settingView.frame.origin.x
+            let yPosForView = self.settingView.frame.origin.y
             
              //+ self.btnSlideDown.frame.height
-            let btnMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height
-                - self.btnSlideDown.frame.height + self.btnSlideDown.frame.height/3 + 2 //+ 5
-            let viewMovingValue:CGFloat? = self.viewNewHorizon.frame.origin.y + self.settingView.frame.height //+ 10
+            //let btnMovingValue = self.viewNewHorizon.frame.origin.y + self.viewNewHorizon.frame.height
+                //- self.btnSlideDown.frame.height + self.btnSlideDown.frame.height/3 + 2 //+ 5
+            
+            let btnMovingValue = self.settingView.frame.height - self.constraintBottomSlide.constant //- self.btnSlideDown.frame.height
+            let viewMovingValue = self.settingView.frame.height //self.viewNewHorizon.frame.origin.y + self.settingView.frame.height //+ 10
             
             // если меню настроек отображено
             if self.settingsPresent {
                 // перемещаем его вниз
-                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! + btnMovingValue!,
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn, y: yPosForBtn + btnMovingValue,
                                                  width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
-                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! + viewMovingValue!,
+                self.settingView.frame = CGRect(x: xPosForView, y: yPosForView + viewMovingValue,
                                                  width: self.settingView.frame.width, height: self.settingView.frame.height)
                 self.btnSlideDown.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0) //CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
 
@@ -51,9 +55,9 @@ class ViewController: UIViewController {
             }
             else {
                 // перемещаем его вверх
-                self.btnSlideDown.frame = CGRect(x: xPosForBtn!, y: yPosForBtn! - btnMovingValue!,
+                self.btnSlideDown.frame = CGRect(x: xPosForBtn, y: yPosForBtn - btnMovingValue,
                                                  width: self.btnSlideDown.frame.width, height: self.btnSlideDown.frame.height)
-                self.settingView.frame = CGRect(x: xPosForView!, y: yPosForView! - viewMovingValue!,
+                self.settingView.frame = CGRect(x: xPosForView, y: yPosForView - viewMovingValue,
                                                  width: self.settingView.frame.width, height: self.settingView.frame.height)
                 self.btnSlideDown.transform =  CGAffineTransform(scaleX: 1.0, y: -1.0) //CGAffineTransform(rotationAngle: (0.0 * CGFloat(M_PI)) / 180.0)
 
@@ -87,7 +91,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // width of switch
-        let width = 2 * self.btnInst.frame.width + 20
+        let width = 2 * self.btnInst.frame.width + self.constraintLeading.constant // правильно!
 
         // add switch
         let music = BetterSegmentedControl(
@@ -123,13 +127,14 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // add constraints for settingsView
-        let height = self.view.frame.size.height - self.viewNewHorizon.frame.size.height - self.btnSlideDown.frame.size.height
-        let bottom = self.view.frame.size.height - self.viewNewHorizon.frame.size.height - self.btnSlideDown.frame.size.height
+        let height = self.view.frame.size.height - self.viewNewHorizon.frame.size.height
+            - self.btnSlideDown.frame.size.height //+ self.constraintBottomSlide.constant
     
         let viewHeightConstraint = NSLayoutConstraint(item: settingView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
-        let viewBottomConstraint = NSLayoutConstraint(item: settingView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: bottom)
+        let viewBottomConstraint = NSLayoutConstraint(item: settingView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: height)
+        //let viewTopConstraint = NSLayoutConstraint(item: settingView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: height)
         
-        NSLayoutConstraint.activate([viewHeightConstraint, viewBottomConstraint])
+        NSLayoutConstraint.activate([viewHeightConstraint, viewBottomConstraint]) //, viewTopConstraint])
     }
 }
 
