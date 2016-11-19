@@ -31,7 +31,7 @@ class AccuracyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadImage(url: question.image)
+        //self.loadImage(url: question.image)
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
         
