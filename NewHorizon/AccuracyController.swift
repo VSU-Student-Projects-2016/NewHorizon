@@ -19,6 +19,8 @@ class AccuracyController: UIViewController {
     @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var correctAnswer: UILabel!
     
+    @IBOutlet weak var btnOneDigit: UIButton!
+    @IBOutlet weak var constraintDistBetweenButtons: NSLayoutConstraint!
     
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
@@ -32,6 +34,11 @@ class AccuracyController: UIViewController {
         self.loadImage(url: question.image)
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
+        
+        let leading = (UIScreen.main.bounds.width - self.btnOneDigit.frame.width * 6 - self.constraintDistBetweenButtons.constant * 5) / 2
+        let leadingConstraint = NSLayoutConstraint(item: btnOneDigit, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
+        
+        NSLayoutConstraint.activate([leadingConstraint])
     }
     
     func loadQuestion(question : Question) {

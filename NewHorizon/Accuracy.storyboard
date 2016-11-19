@@ -63,11 +63,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgc-Q4-RNG">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgc-Q4-RNG">
+                                <frame key="frameInset" minX="65" minY="210" width="45" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5E8-Ih-7Fr"/>
+                                    <constraint firstAttribute="height" constant="45" id="5E8-Ih-7Fr"/>
                                     <constraint firstAttribute="width" constant="45" id="lBb-0B-Ezg">
-                                        <variation key="heightClass=compact-widthClass=compact" constant="40"/>
+                                        <variation key="heightClass=compact-widthClass=compact" constant="45"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -75,69 +76,80 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc7-B4-SMC">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc7-B4-SMC">
+                                <frame key="frameInset" minX="125" minY="210" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="2" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk5-Ui-YJ3">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk5-Ui-YJ3">
+                                <frame key="frameInset" minX="185" minY="210" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="3" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugI-vc-Fla">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugI-vc-Fla">
+                                <frame key="frameInset" minX="245" minY="210" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="4" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMY-Zz-0li">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMY-Zz-0li">
+                                <frame key="frameInset" minX="305" minY="210" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="5" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cot-mJ-2mK">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cot-mJ-2mK">
+                                <frame key="frameInset" minX="65" minY="266" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="6" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui2-eH-u2X">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui2-eH-u2X">
+                                <frame key="frameInset" minX="125" minY="266" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="7" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U90-ba-4bB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U90-ba-4bB">
+                                <frame key="frameInset" minX="185" minY="266" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="8" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQ9-ms-4XU">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQ9-ms-4XU">
+                                <frame key="frameInset" minX="245" minY="266" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="9" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UX-SK-eXx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UX-SK-eXx">
+                                <frame key="frameInset" minX="305" minY="266" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="0" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgC-2D-5X5">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkE-Hh-zDk">
+                                <frame key="frameInset" minX="365" minY="266" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="-" backgroundImage="circle">
+                                <state key="normal" title="&lt;" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkE-Hh-zDk">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgC-2D-5X5">
+                                <frame key="frameInset" minX="365" minY="210" width="45" height="45"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="&lt;" backgroundImage="circle">
+                                <state key="normal" title="-" backgroundImage="circle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -147,7 +159,6 @@
                             <constraint firstItem="3UX-SK-eXx" firstAttribute="leading" secondItem="HQ9-ms-4XU" secondAttribute="trailing" constant="15" id="0L1-Rs-72K"/>
                             <constraint firstItem="U90-ba-4bB" firstAttribute="bottom" secondItem="cot-mJ-2mK" secondAttribute="bottom" id="0yZ-S2-DI0"/>
                             <constraint firstItem="Ui2-eH-u2X" firstAttribute="bottom" secondItem="cot-mJ-2mK" secondAttribute="bottom" id="1AL-Sq-F7X"/>
-                            <constraint firstItem="hgc-Q4-RNG" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" constant="10" id="2Uq-nC-OLA"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="top" secondItem="Tog-d6-u7O" secondAttribute="bottom" constant="40" id="2yA-St-MTT">
                                 <variation key="heightClass=compact-widthClass=compact" constant="30"/>
                             </constraint>
@@ -159,8 +170,7 @@
                             <constraint firstAttribute="trailing" secondItem="mzm-vW-tMO" secondAttribute="trailing" id="9ur-Bo-SgN"/>
                             <constraint firstItem="Ggv-5X-H7g" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leadingMargin" id="Ahv-aM-5Ak"/>
                             <constraint firstItem="Ui2-eH-u2X" firstAttribute="leading" secondItem="cot-mJ-2mK" secondAttribute="trailing" constant="15" id="CJ6-DX-qxw"/>
-                            <constraint firstItem="hgc-Q4-RNG" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="15" id="Ebe-mJ-Pc0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vkE-Hh-zDk" secondAttribute="trailing" constant="135" id="F4V-g8-V0G"/>
+                            <constraint firstItem="hgc-Q4-RNG" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="10" id="Ebe-mJ-Pc0"/>
                             <constraint firstItem="XnA-oi-evR" firstAttribute="bottom" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="-25" id="GpO-fz-zVe">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
                             </constraint>
@@ -201,7 +211,6 @@
                             <constraint firstItem="KnT-aO-J0K" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="top" constant="25" id="pyw-hd-bo9">
                                 <variation key="heightClass=compact-widthClass=compact" constant="15"/>
                             </constraint>
-                            <constraint firstItem="RgC-2D-5X5" firstAttribute="centerY" secondItem="NMY-Zz-0li" secondAttribute="centerY" id="qUj-HM-gCE"/>
                             <constraint firstItem="RgC-2D-5X5" firstAttribute="width" secondItem="hgc-Q4-RNG" secondAttribute="width" id="sKP-q7-fxH"/>
                             <constraint firstItem="Ztx-Ag-uWA" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="120" id="sid-td-JTk"/>
                             <constraint firstItem="KnT-aO-J0K" firstAttribute="centerX" secondItem="mzm-vW-tMO" secondAttribute="centerX" id="soG-Mh-1tN"/>
@@ -222,6 +231,8 @@
                     <connections>
                         <outlet property="answerField" destination="KnT-aO-J0K" id="728-Qv-1k1"/>
                         <outlet property="backImage" destination="mzm-vW-tMO" id="hMc-QN-yme"/>
+                        <outlet property="btnOneDigit" destination="hgc-Q4-RNG" id="8Ee-0d-2is"/>
+                        <outlet property="constraintDistBetweenButtons" destination="fRp-qh-WhE" id="tyo-HD-YqG"/>
                         <outlet property="placeholder" destination="NnJ-ls-ut4" id="SGq-ho-887"/>
                         <outlet property="questionText" destination="Ggv-5X-H7g" id="xRi-Fz-avI"/>
                     </connections>
