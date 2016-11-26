@@ -21,6 +21,9 @@ class AccuracyController: UIViewController {
     
     @IBOutlet weak var btnOneDigit: UIButton!
     @IBOutlet weak var constraintDistBetweenButtons: NSLayoutConstraint!
+    @IBOutlet weak var constraintButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var labelQuestion: UILabel!
     
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
@@ -31,14 +34,22 @@ class AccuracyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.labelQuestion.translatesAutoresizingMaskIntoConstraints = false
+
+        let leading = (UIScreen.main.bounds.width - self.constraintButtonWidth.constant * 6 - self.constraintDistBetweenButtons.constant * 5) / 2
+        let leadingConstraint = NSLayoutConstraint(item: btnOneDigit, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
+        
+        /*let viewHeight = self.labelQuestion.bounds.height + 16;
+        let constraintViewHeight = NSLayoutConstraint(item: topView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: viewHeight)
+        
+        let constraintCenterY = NSLayoutConstraint(item: topView, attribute: .centerY, relatedBy: .equal, toItem: topView, attribute: .centerY, multiplier: 1.0, constant: 0)*/
+        NSLayoutConstraint.activate([leadingConstraint]) //, constraintViewHeight, constraintCenterY])
+        self.view.layoutIfNeeded()
+
+        
         //self.loadImage(url: question.image)
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
-        
-        let leading = (UIScreen.main.bounds.width - self.btnOneDigit.frame.width * 6 - self.constraintDistBetweenButtons.constant * 5) / 2
-        let leadingConstraint = NSLayoutConstraint(item: btnOneDigit, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
-        
-        NSLayoutConstraint.activate([leadingConstraint])
     }
     
     func loadQuestion(question : Question) {
