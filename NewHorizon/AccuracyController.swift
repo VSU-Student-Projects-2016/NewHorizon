@@ -19,6 +19,11 @@ class AccuracyController: UIViewController {
     @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var correctAnswer: UILabel!
     
+    @IBOutlet weak var btnOneDigit: UIButton!
+    @IBOutlet weak var constraintDistBetweenButtons: NSLayoutConstraint!
+    @IBOutlet weak var constraintButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var labelQuestion: UILabel!
     
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
@@ -29,24 +34,17 @@ class AccuracyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadImage(url: question.image)
+        let leading = (UIScreen.main.bounds.width - self.constraintButtonWidth.constant * 6 - self.constraintDistBetweenButtons.constant * 5) / 2
+        let leadingConstraint = NSLayoutConstraint(item: btnOneDigit, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
+        
+        NSLayoutConstraint.activate([leadingConstraint]) 
+        self.view.layoutIfNeeded()
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
     }
     
     func loadQuestion(question : Question) {
         questionText.text = question.text
-    }
-    
-    func loadImage(url : String) {
-        do {
-            let urlData = URL(string: url)
-            let data = try Data(contentsOf: urlData!)
-            let image = UIImage(data: data)
-            backImage.image = image
-        } catch {
-            print("Can't set image")
-        }
     }
     
     @IBAction func onAnswerTouch(_ sender: UIButton) {
