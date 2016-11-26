@@ -136,6 +136,9 @@
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 </variation>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Xt-4U-zAs">
+                                <color key="tintColor" red="0.93266650880000002" green="0.1975780207" blue="0.1977245061" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-ls-ut4">
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-V6-xEL">
@@ -162,13 +165,16 @@
                             <constraint firstItem="Ggv-5X-H7g" firstAttribute="centerY" secondItem="mzm-vW-tMO" secondAttribute="centerY" id="6Hd-Gi-65n"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="centerX" secondItem="Ggv-5X-H7g" secondAttribute="centerX" id="BwI-cV-GIY"/>
                             <constraint firstItem="Ggv-5X-H7g" firstAttribute="leading" secondItem="mzm-vW-tMO" secondAttribute="leading" id="Fai-Yg-Oro"/>
+                            <constraint firstAttribute="trailing" secondItem="5Xt-4U-zAs" secondAttribute="trailing" id="Fxs-CB-qEC"/>
                             <constraint firstItem="NnJ-ls-ut4" firstAttribute="top" secondItem="Tog-d6-u7O" secondAttribute="bottom" constant="-20" id="G0C-wQ-rh6"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="top" secondItem="2JE-dN-wto" secondAttribute="top" id="MR6-NG-X3F"/>
+                            <constraint firstItem="5Xt-4U-zAs" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="OQk-Yv-0Yw"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="euY-cU-Re4"/>
                             <constraint firstItem="NnJ-ls-ut4" firstAttribute="width" secondItem="2JE-dN-wto" secondAttribute="width" id="h4G-rQ-v7F"/>
                             <constraint firstItem="7nd-oh-vBu" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="-3" id="kOf-7J-msh"/>
                             <constraint firstItem="NnJ-ls-ut4" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leadingMargin" constant="-20" id="rXc-Dd-oFK"/>
                             <constraint firstItem="NnJ-ls-ut4" firstAttribute="height" secondItem="2JE-dN-wto" secondAttribute="height" id="rpq-0A-mZJ"/>
+                            <constraint firstItem="7nd-oh-vBu" firstAttribute="top" secondItem="5Xt-4U-zAs" secondAttribute="bottom" id="sDX-ox-k9f"/>
                             <constraint firstItem="Ztx-Ag-uWA" firstAttribute="top" secondItem="7nd-oh-vBu" secondAttribute="bottom" id="uAd-fz-e2E"/>
                             <constraint firstAttribute="trailing" secondItem="7nd-oh-vBu" secondAttribute="trailing" id="zNy-5R-cg4"/>
                         </constraints>
@@ -190,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Q6-hR-irf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671.73913043478262" y="650.72463768115949"/>
+            <point key="canvasLocation" x="-672.41379310344837" y="650.39999999999998"/>
         </scene>
     </scenes>
 </document>
