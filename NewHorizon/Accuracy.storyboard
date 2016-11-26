@@ -115,9 +115,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kit-4H-C4A">
                                 <frame key="frameInset" minX="65" minY="110" width="160" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="7jj-bQ-J6h"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -131,7 +128,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -180,11 +177,12 @@
                             <constraint firstItem="Ui2-eH-u2X" firstAttribute="leading" secondItem="cot-mJ-2mK" secondAttribute="trailing" constant="15" id="CJ6-DX-qxw"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="top" secondItem="ez0-fp-LTM" secondAttribute="bottom" id="CpG-I9-bFR"/>
                             <constraint firstItem="hgc-Q4-RNG" firstAttribute="top" secondItem="mzm-vW-tMO" secondAttribute="bottom" constant="10" id="Ebe-mJ-Pc0"/>
-                            <constraint firstItem="XnA-oi-evR" firstAttribute="centerY" secondItem="mzm-vW-tMO" secondAttribute="centerY" id="Hn9-Ej-jZX"/>
                             <constraint firstItem="tk5-Ui-YJ3" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="I7a-L0-tmL"/>
+                            <constraint firstItem="kit-4H-C4A" firstAttribute="top" secondItem="ez0-fp-LTM" secondAttribute="bottom" constant="20" id="IOm-C9-7mu"/>
                             <constraint firstItem="vkE-Hh-zDk" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="Ikb-Rl-OFE"/>
                             <constraint firstItem="NMY-Zz-0li" firstAttribute="leading" secondItem="ugI-vc-Fla" secondAttribute="trailing" constant="15" id="Ixl-hZ-kBb"/>
                             <constraint firstItem="mzm-vW-tMO" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="JCW-Qe-CF3"/>
+                            <constraint firstItem="kit-4H-C4A" firstAttribute="centerY" secondItem="mzm-vW-tMO" secondAttribute="centerY" id="Jps-5O-27x"/>
                             <constraint firstItem="cot-mJ-2mK" firstAttribute="leading" secondItem="hgc-Q4-RNG" secondAttribute="leading" id="KLB-Lk-okU"/>
                             <constraint firstItem="hgc-Q4-RNG" firstAttribute="leading" secondItem="kit-4H-C4A" secondAttribute="leading" id="LRI-j5-ioS"/>
                             <constraint firstItem="3UX-SK-eXx" firstAttribute="bottom" secondItem="cot-mJ-2mK" secondAttribute="bottom" id="MMW-61-U0D"/>
@@ -202,6 +200,7 @@
                             <constraint firstItem="RgC-2D-5X5" firstAttribute="leading" secondItem="NMY-Zz-0li" secondAttribute="trailing" constant="15" id="Z7o-I1-iht"/>
                             <constraint firstItem="NMY-Zz-0li" firstAttribute="top" secondItem="hgc-Q4-RNG" secondAttribute="top" id="ZMW-6Q-efD"/>
                             <constraint firstItem="cot-mJ-2mK" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="a0N-hN-Wnl"/>
+                            <constraint firstItem="XnA-oi-evR" firstAttribute="centerY" secondItem="mzm-vW-tMO" secondAttribute="centerY" id="a7B-PT-aNg"/>
                             <constraint firstItem="RgC-2D-5X5" firstAttribute="top" secondItem="hgc-Q4-RNG" secondAttribute="top" id="bUd-5J-d1Q"/>
                             <constraint firstItem="ugI-vc-Fla" firstAttribute="width" secondItem="hgc-Q4-RNG" secondAttribute="width" id="baK-m4-X1j"/>
                             <constraint firstItem="ugI-vc-Fla" firstAttribute="top" secondItem="hgc-Q4-RNG" secondAttribute="top" id="el5-84-Oy2"/>
@@ -228,7 +227,6 @@
                             <constraint firstItem="qc7-B4-SMC" firstAttribute="width" secondItem="hgc-Q4-RNG" secondAttribute="width" id="wb0-lb-bcw"/>
                             <constraint firstItem="tk5-Ui-YJ3" firstAttribute="top" secondItem="hgc-Q4-RNG" secondAttribute="top" id="wgL-td-ISY"/>
                             <constraint firstItem="3UX-SK-eXx" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="xgq-Ms-L5j"/>
-                            <constraint firstItem="kit-4H-C4A" firstAttribute="centerY" secondItem="mzm-vW-tMO" secondAttribute="centerY" id="xnc-t9-eA1"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">

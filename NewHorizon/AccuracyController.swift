@@ -34,37 +34,17 @@ class AccuracyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.labelQuestion.translatesAutoresizingMaskIntoConstraints = false
-
         let leading = (UIScreen.main.bounds.width - self.constraintButtonWidth.constant * 6 - self.constraintDistBetweenButtons.constant * 5) / 2
         let leadingConstraint = NSLayoutConstraint(item: btnOneDigit, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
         
-        /*let viewHeight = self.labelQuestion.bounds.height + 16;
-        let constraintViewHeight = NSLayoutConstraint(item: topView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: viewHeight)
-        
-        let constraintCenterY = NSLayoutConstraint(item: topView, attribute: .centerY, relatedBy: .equal, toItem: topView, attribute: .centerY, multiplier: 1.0, constant: 0)*/
-        NSLayoutConstraint.activate([leadingConstraint]) //, constraintViewHeight, constraintCenterY])
+        NSLayoutConstraint.activate([leadingConstraint]) 
         self.view.layoutIfNeeded()
-
-        
-        //self.loadImage(url: question.image)
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
     }
     
     func loadQuestion(question : Question) {
         questionText.text = question.text
-    }
-    
-    func loadImage(url : String) {
-        do {
-            let urlData = URL(string: url)
-            let data = try Data(contentsOf: urlData!)
-            let image = UIImage(data: data)
-            backImage.image = image
-        } catch {
-            print("Can't set image")
-        }
     }
     
     @IBAction func onAnswerTouch(_ sender: UIButton) {
