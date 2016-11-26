@@ -63,7 +63,7 @@ class MapController: UIViewController {
 
         imageView.touchDown = { image in
             WebServer.attack(region: region.ID, onLoad: { question in
-                let name = question.isEnum() ? "Question" : "Accuracy"
+                let name = question.isEnum() ? "EnumView" : "AccuracyView"
                 let id = question.isEnum() ? "QUESTION_ID" : "ACCURACY_ID"
 
                 let storyboard = UIStoryboard(name: name, bundle: nil)

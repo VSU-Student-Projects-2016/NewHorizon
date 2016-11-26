@@ -12,10 +12,10 @@ import Alamofire
 class EnumController: UIViewController, QuestionController {
 
     @IBOutlet weak var questionText: UILabel!
-    @IBOutlet weak var button0: UIButton!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button0: Button!
+    @IBOutlet weak var button1: Button!
+    @IBOutlet weak var button2: Button!
+    @IBOutlet weak var button3: Button!
     
     @IBOutlet weak var placeholder: UIView!
     @IBOutlet weak var backImage: UIImageView!
@@ -48,10 +48,15 @@ class EnumController: UIViewController, QuestionController {
     
     func loadQuestion(question : Question) {
         questionText.text = question.text
-        button0.setTitle(question.answers[0], for: UIControlState.normal)
-        button1.setTitle(question.answers[1], for: UIControlState.normal)
-        button2.setTitle(question.answers[2], for: UIControlState.normal)
-        button3.setTitle(question.answers[3], for: UIControlState.normal)
+        let buttons = [button0, button1, button2, button3]
+        for i in 0...3 {
+            buttons[i]?.setTitle(question.answers[i], for: UIControlState.normal)
+            buttons[i]?.touchDown = { button in
+                WebServer.sendAnswer(userAnswer: i) { correct in
+                    self.didAnswerSend(correct)
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
