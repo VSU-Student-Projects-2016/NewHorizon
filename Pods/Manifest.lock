@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.0.0)
   - BetterSegmentedControl (0.5)
+  - SocketRocket (0.5.1)
   - TTSwitch (0.0.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - BetterSegmentedControl (~> 0.5)
+  - SocketRocket
   - TTSwitch (~> 0.0.5)
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   BetterSegmentedControl: db74c56602e418e9eca8f6340e0ed0a7215f5f7c
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   TTSwitch: fef67a32dbd75e6981a3d27a7e954728e537de50
 
-PODFILE CHECKSUM: 33052dd85ce4203f6206418e5be5a0a6f1a8bfdf
+PODFILE CHECKSUM: f08e3684c941fc0a0bc8cd5deb6fd43723bb023e
 
 COCOAPODS: 1.1.0.rc.2
