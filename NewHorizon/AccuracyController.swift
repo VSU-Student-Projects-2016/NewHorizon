@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 let HIGH_USE_INTERVAL : TimeInterval = 1/60
+let TIME_FOR_QUESTION = 5.0
 
 class AccuracyController: UIViewController, QuestionController {
 
@@ -28,10 +29,6 @@ class AccuracyController: UIViewController, QuestionController {
     @IBOutlet weak var labelQuestion: UILabel!
     
     @IBOutlet weak var progviewTimer: UIProgressView!
-    
-    
-    
-    
     
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
@@ -71,8 +68,8 @@ class AccuracyController: UIViewController, QuestionController {
     
     func setProgress() {
         time += HIGH_USE_INTERVAL
-        self.progviewTimer.progress = Float(time / 3.0)
-        if time >= 3 {
+        self.progviewTimer.progress = Float(time / TIME_FOR_QUESTION)
+        if time >= TIME_FOR_QUESTION {
             timer.invalidate()
         }
     }

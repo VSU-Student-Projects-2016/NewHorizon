@@ -72,10 +72,9 @@ class EnumController: UIViewController, QuestionController {
     
     func setProgress() {
         time += HIGH_USE_INTERVAL
-        self.progviewTimer.progress = Float(time / 3.0)
-        if time >= 3 {
+        self.progviewTimer.progress = Float(time / TIME_FOR_QUESTION)
+        if time >= TIME_FOR_QUESTION {
             timer.invalidate()
-            
         }
     }
     
