@@ -34,9 +34,28 @@ class AccuracyController: UIViewController, QuestionController {
     @IBOutlet weak var answerField: UILabel!
     
     @IBAction func btnDelClick(_ sender: AnyObject) {
+        let text = self.answerField.text
+        if !(text!.isEmpty) {
+            self.answerField.text = text?.substring(to: (text!.index(before: (text!.endIndex))))
+            if (text?.characters.count == 1) {
+                let startIndex = text?.startIndex
+                let firstLetter = text?.characters[startIndex!]
+                if (firstLetter == "-") {
+                    self.answerField.text = ""
+                }
+            }
+        }
     }
     
     @IBAction func btnMinusClick(_ sender: AnyObject) {
+        let text = self.answerField.text
+        if !(text!.isEmpty) {
+            let startIndex = text?.startIndex
+            let firstLetter = text?.characters[startIndex!]
+            if (firstLetter != "-") {
+                self.answerField.text?.insert("-", at: startIndex!)
+            }
+        }
     }
     
     @IBOutlet weak var constraintDistBetweenButtons: NSLayoutConstraint!
@@ -74,9 +93,13 @@ class AccuracyController: UIViewController, QuestionController {
         self.placeholder.removeFromSuperview()
         
         let buttons = [btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]
-        for i in 0..<9 {
+        
+        for i in 0...9 {
             buttons[i]?.touchDown = { button in
-                self.answerField.text = self.answerField.text! + String(i)
+                let text = self.answerField.text
+                if (text?.characters.count)! < 10 {
+                    self.answerField.text = text! + String(i)
+                }
             }
         }
     }
