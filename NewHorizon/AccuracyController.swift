@@ -61,8 +61,7 @@ class AccuracyController: UIViewController, QuestionController {
     var time = 0.0
     var timer: Timer!
     
-    func tick()
-    {
+    func tick() {
         timer = Timer.scheduledTimer(timeInterval: HIGH_USE_INTERVAL, target: self, selector: #selector(AccuracyController.setProgress), userInfo: nil, repeats: true)
     }
     
