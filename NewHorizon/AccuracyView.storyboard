@@ -150,7 +150,7 @@
                                     <action selector="onAnswerTouch:" destination="D4z-Ot-Swn" eventType="touchUpInside" id="esv-jd-PlP"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-xR-txu">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-xR-txu">
                                 <color key="tintColor" red="0.93266650880000002" green="0.1975780207" blue="0.1977245061" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-ls-ut4">
@@ -247,6 +247,7 @@
                         <outlet property="constraintDistBetweenButtons" destination="fRp-qh-WhE" id="tyo-HD-YqG"/>
                         <outlet property="labelQuestion" destination="Ggv-5X-H7g" id="R57-rm-yx1"/>
                         <outlet property="placeholder" destination="NnJ-ls-ut4" id="SGq-ho-887"/>
+                        <outlet property="progviewTimer" destination="Q3X-xR-txu" id="HpI-jx-Msk"/>
                         <outlet property="questionText" destination="Ggv-5X-H7g" id="xRi-Fz-avI"/>
                         <outlet property="topView" destination="ez0-fp-LTM" id="FTK-kG-wMy"/>
                     </connections>

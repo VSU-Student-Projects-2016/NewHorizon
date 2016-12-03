@@ -191,6 +191,7 @@
                         <outlet property="button2" destination="G4c-B0-Wiz" id="oOH-EI-9db"/>
                         <outlet property="button3" destination="Qs6-Dh-pr8" id="XZG-TC-doY"/>
                         <outlet property="placeholder" destination="NnJ-ls-ut4" id="SGq-ho-887"/>
+                        <outlet property="progviewTimer" destination="5Xt-4U-zAs" id="IWZ-df-of4"/>
                         <outlet property="questionText" destination="Ggv-5X-H7g" id="xRi-Fz-avI"/>
                     </connections>
                 </viewController>
