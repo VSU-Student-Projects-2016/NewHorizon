@@ -63,22 +63,16 @@ class MapController: UIViewController {
 
         imageView.touchDown = { image in
             WebServer.attack(region: region.ID, onLoad: { question in
-                let name = question.isEnum() ? "Question" : "Accuracy"
+                let name = question.isEnum() ? "EnumView" : "AccuracyView"
                 let id = question.isEnum() ? "QUESTION_ID" : "ACCURACY_ID"
 
                 let storyboard = UIStoryboard(name: name, bundle: nil)
                 let ctrl = storyboard.instantiateViewController(withIdentifier: id)
+                var questionCtrl = ctrl as! QuestionController
 
-                // TODO: Add interface for QuestiuonController
-                if question.isEnum() {
-                    let enumCtrl = ctrl as! QuestionController
-                    enumCtrl.question = question
-                    enumCtrl.onQuestuionEnd = self.updateMap
-                } else {
-                    let enumCtrl = ctrl as! AccuracyController
-                    enumCtrl.question = question
-                    enumCtrl.onQuestuionEnd = self.updateMap
-                }
+                questionCtrl.question = question
+                questionCtrl.onQuestuionEnd = self.updateMap
+                
                 self.present(ctrl, animated: true, completion: nil)
             })
         }

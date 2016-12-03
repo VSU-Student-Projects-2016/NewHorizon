@@ -14,13 +14,6 @@ class Question {
     var answers : Array<String> = []
     
     public init() {
-        
-    }
-    
-    public init(image : String, text : String, answers : Array<String>) {
-        self.image = image
-        self.text = text
-        self.answers = answers
     }
     
     public init(_ data: [String: Any]) {
