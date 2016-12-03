@@ -150,6 +150,9 @@
                                     <action selector="onAnswerTouch:" destination="D4z-Ot-Swn" eventType="touchUpInside" id="esv-jd-PlP"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-xR-txu">
+                                <color key="tintColor" red="0.93266650880000002" green="0.1975780207" blue="0.1977245061" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-ls-ut4">
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-V6-xEL">
@@ -185,6 +188,7 @@
                             <constraint firstItem="kit-4H-C4A" firstAttribute="centerY" secondItem="mzm-vW-tMO" secondAttribute="centerY" id="Jps-5O-27x"/>
                             <constraint firstItem="cot-mJ-2mK" firstAttribute="leading" secondItem="hgc-Q4-RNG" secondAttribute="leading" id="KLB-Lk-okU"/>
                             <constraint firstItem="hgc-Q4-RNG" firstAttribute="leading" secondItem="kit-4H-C4A" secondAttribute="leading" id="LRI-j5-ioS"/>
+                            <constraint firstAttribute="trailing" secondItem="Q3X-xR-txu" secondAttribute="trailing" id="MJx-hv-cKi"/>
                             <constraint firstItem="3UX-SK-eXx" firstAttribute="bottom" secondItem="cot-mJ-2mK" secondAttribute="bottom" id="MMW-61-U0D"/>
                             <constraint firstItem="HQ9-ms-4XU" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="MPu-Zu-ofE"/>
                             <constraint firstAttribute="trailing" secondItem="ez0-fp-LTM" secondAttribute="trailing" id="OYb-Q4-Ckh"/>
@@ -210,6 +214,7 @@
                             <constraint firstItem="Ui2-eH-u2X" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="h0U-08-zcB"/>
                             <constraint firstItem="vkE-Hh-zDk" firstAttribute="bottom" secondItem="cot-mJ-2mK" secondAttribute="bottom" id="j9Y-8n-QDx"/>
                             <constraint firstItem="U90-ba-4bB" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="jhm-Sj-QQC"/>
+                            <constraint firstItem="Q3X-xR-txu" firstAttribute="leading" secondItem="2JE-dN-wto" secondAttribute="leading" id="k1B-0k-FGL"/>
                             <constraint firstItem="RgC-2D-5X5" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="lqL-wr-dhB"/>
                             <constraint firstItem="ugI-vc-Fla" firstAttribute="leading" secondItem="tk5-Ui-YJ3" secondAttribute="trailing" constant="15" id="lw7-TQ-6lj"/>
                             <constraint firstItem="qc7-B4-SMC" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="mWa-9L-80z"/>
@@ -227,6 +232,7 @@
                             <constraint firstItem="qc7-B4-SMC" firstAttribute="width" secondItem="hgc-Q4-RNG" secondAttribute="width" id="wb0-lb-bcw"/>
                             <constraint firstItem="tk5-Ui-YJ3" firstAttribute="top" secondItem="hgc-Q4-RNG" secondAttribute="top" id="wgL-td-ISY"/>
                             <constraint firstItem="3UX-SK-eXx" firstAttribute="height" secondItem="hgc-Q4-RNG" secondAttribute="height" id="xgq-Ms-L5j"/>
+                            <constraint firstItem="Q3X-xR-txu" firstAttribute="bottom" secondItem="mzm-vW-tMO" secondAttribute="bottom" id="zdX-Ha-kZm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -241,6 +247,7 @@
                         <outlet property="constraintDistBetweenButtons" destination="fRp-qh-WhE" id="tyo-HD-YqG"/>
                         <outlet property="labelQuestion" destination="Ggv-5X-H7g" id="R57-rm-yx1"/>
                         <outlet property="placeholder" destination="NnJ-ls-ut4" id="SGq-ho-887"/>
+                        <outlet property="progviewTimer" destination="Q3X-xR-txu" id="HpI-jx-Msk"/>
                         <outlet property="questionText" destination="Ggv-5X-H7g" id="xRi-Fz-avI"/>
                         <outlet property="topView" destination="ez0-fp-LTM" id="FTK-kG-wMy"/>
                     </connections>

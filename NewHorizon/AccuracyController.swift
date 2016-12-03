@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+let HIGH_USE_INTERVAL : TimeInterval = 1/60
+let TIME_FOR_QUESTION = 5.0
+
 class AccuracyController: UIViewController, QuestionController {
 
     @IBOutlet weak var questionText: UILabel!
@@ -24,6 +27,8 @@ class AccuracyController: UIViewController, QuestionController {
     @IBOutlet weak var constraintButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var labelQuestion: UILabel!
+    
+    @IBOutlet weak var progviewTimer: UIProgressView!
     
     let type = WebServer.QuestionType.ACCURACY
     var answer : Int = 0
@@ -53,8 +58,25 @@ class AccuracyController: UIViewController, QuestionController {
         self.placeholder.removeFromSuperview()
     }
     
+    var time = 0.0
+    var timer: Timer!
+    
+    func tick()
+    {
+        timer = Timer.scheduledTimer(timeInterval: HIGH_USE_INTERVAL, target: self, selector: #selector(AccuracyController.setProgress), userInfo: nil, repeats: true)
+    }
+    
+    func setProgress() {
+        time += HIGH_USE_INTERVAL
+        self.progviewTimer.progress = Float(time / TIME_FOR_QUESTION)
+        if time >= TIME_FOR_QUESTION {
+            timer.invalidate()
+        }
+    }
+    
     func loadQuestion(question : Question) {
         questionText.text = question.text
+        tick()
     }
     
     @IBAction func onAnswerTouch(_ sender: UIButton) {

@@ -20,6 +20,8 @@ class EnumController: UIViewController, QuestionController {
     @IBOutlet weak var placeholder: UIView!
     @IBOutlet weak var backImage: UIImageView!
     
+    @IBOutlet weak var progviewTimer: UIProgressView!
+    
     let type = WebServer.QuestionType.ENUM
     var answer : Int = 0
     var done : Bool = false
@@ -56,6 +58,23 @@ class EnumController: UIViewController, QuestionController {
                     self.didAnswerSend(correct)
                 }
             }
+        }
+        tick()
+    }
+    
+    var time = 0.0
+    var timer: Timer!
+    
+    func tick()
+    {
+        timer = Timer.scheduledTimer(timeInterval: HIGH_USE_INTERVAL, target: self, selector: #selector(AccuracyController.setProgress), userInfo: nil, repeats: true)
+    }
+    
+    func setProgress() {
+        time += HIGH_USE_INTERVAL
+        self.progviewTimer.progress = Float(time / TIME_FOR_QUESTION)
+        if time >= TIME_FOR_QUESTION {
+            timer.invalidate()
         }
     }
     
