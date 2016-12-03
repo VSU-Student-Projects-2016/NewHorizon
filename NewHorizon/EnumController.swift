@@ -55,7 +55,9 @@ class EnumController: UIViewController, QuestionController {
             buttons[i]?.setTitle(question.answers[i], for: UIControlState.normal)
             buttons[i]?.touchDown = { button in
                 WebServer.sendAnswer(userAnswer: i) { correct in
-                    self.didAnswerSend(correct)
+                    buttons[i - 1]?.backgroundColor = .red
+                    buttons[correct - 1]?.backgroundColor = .green
+                    self.done = true;
                 }
             }
         }
@@ -97,45 +99,10 @@ class EnumController: UIViewController, QuestionController {
         }
     }
     
-    func didAnswerSend(_ correct : Int) {
-        let buttons = [button0, button1, button2, button3]
-        buttons[answer - 1]?.backgroundColor = .red
-        buttons[correct - 1]?.backgroundColor = .green
-        done = true
-    }
-    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (done) {
             onQuestuionEnd()
             self.dismiss(animated: true)
-        }
-    }
-    
-    @IBAction func answer1Touched(_ sender: UIButton) {
-        answer = 1
-        WebServer.sendAnswer(userAnswer: answer) { correct in
-            self.didAnswerSend(correct)
-        }
-    }
-    
-    @IBAction func answer2Touched(_ sender: UIButton) {
-        answer = 2
-        WebServer.sendAnswer(userAnswer: answer) { correct in
-            self.didAnswerSend(correct)
-        }
-    }
-    
-    @IBAction func answer3Touched(_ sender: UIButton) {
-        answer = 3
-        WebServer.sendAnswer(userAnswer: answer) { correct in
-            self.didAnswerSend(correct)
-        }
-    }
-    
-    @IBAction func answer4Touched(_ sender: UIButton) {
-        answer = 4
-        WebServer.sendAnswer(userAnswer: answer) { correct in
-            self.didAnswerSend(correct)
         }
     }
 }

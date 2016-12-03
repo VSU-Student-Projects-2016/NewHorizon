@@ -48,9 +48,6 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="answer2Touched:" destination="D4z-Ot-Swn" eventType="touchUpInside" id="KKr-fV-Svj"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j83-WT-XMv" customClass="Button" customModule="NewHorizon" customModuleProvider="target">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,9 +57,6 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="answer1Touched:" destination="D4z-Ot-Swn" eventType="touchUpInside" id="MAi-8g-ddC"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4c-B0-Wiz" customClass="Button" customModule="NewHorizon" customModuleProvider="target">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,9 +66,6 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="answer3Touched:" destination="D4z-Ot-Swn" eventType="touchUpInside" id="2cd-Vc-bTk"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs6-Dh-pr8" customClass="Button" customModule="NewHorizon" customModuleProvider="target">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,9 +75,6 @@
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="answer4Touched:" destination="D4z-Ot-Swn" eventType="touchUpInside" id="yFJ-Gl-oLF"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

@@ -14,13 +14,11 @@ class Button: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.initHandler()
         //fatalError("init(coder:)")
     }
     
-    init() {
-        let nonFrame = CGRect(x: 0, y: 0, width: 10, height: 10);
-        super.init(frame: nonFrame)
-        
+    func initHandler() {
         adjustsImageWhenHighlighted = false;
         addTarget(self, action: #selector(Button.touchDown(sender:)), for: [.touchDown, .touchDragEnter])
     }
