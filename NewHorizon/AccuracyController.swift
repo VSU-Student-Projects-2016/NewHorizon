@@ -55,6 +55,12 @@ class AccuracyController: UIViewController, QuestionController {
             if (firstLetter != "-") {
                 self.answerField.text?.insert("-", at: startIndex!)
             }
+            else {
+                self.answerField.text?.remove(at: startIndex!)
+            }
+        }
+        else {
+            self.answerField.text = "-"
         }
     }
     
