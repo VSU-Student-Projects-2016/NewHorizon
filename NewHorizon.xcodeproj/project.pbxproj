@@ -402,7 +402,7 @@
 				DEVELOPMENT_TEAM = 7TK6D9WA3D;
 				INFOPLIST_FILE = NewHorizon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.newhorizon.NewHorizon;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.vsu.newhorizon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -418,7 +418,7 @@
 				DEVELOPMENT_TEAM = 7TK6D9WA3D;
 				INFOPLIST_FILE = NewHorizon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.newhorizon.NewHorizon;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.vsu.newhorizon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
