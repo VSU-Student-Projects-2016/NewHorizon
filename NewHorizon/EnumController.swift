@@ -55,7 +55,7 @@ class EnumController: UIViewController, QuestionController {
             buttons[i]?.setTitle(question.answers[i], for: UIControlState.normal)
             buttons[i]?.touchDown = { button in
                 WebServer.sendAnswer(userAnswer: i) { correct in
-                    buttons[i - 1]?.backgroundColor = .red
+                    buttons[i]?.backgroundColor = .red
                     buttons[correct - 1]?.backgroundColor = .green
                     self.done = true;
                 }

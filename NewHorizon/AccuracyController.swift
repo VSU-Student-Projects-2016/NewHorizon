@@ -19,10 +19,51 @@ class AccuracyController: UIViewController, QuestionController {
     @IBOutlet weak var placeholder: UIView!
     @IBOutlet weak var backImage: UIImageView!
     
-    @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var correctAnswer: UILabel!
     
-    @IBOutlet weak var btnOneDigit: UIButton!
+    @IBOutlet weak var btn1: Button!
+    @IBOutlet weak var btn2: Button!
+    @IBOutlet weak var btn3: Button!
+    @IBOutlet weak var btn4: Button!
+    @IBOutlet weak var btn5: Button!
+    @IBOutlet weak var btn6: Button!
+    @IBOutlet weak var btn7: Button!
+    @IBOutlet weak var btn8: Button!
+    @IBOutlet weak var btn9: Button!
+    @IBOutlet weak var btn0: Button!
+    @IBOutlet weak var answerField: UILabel!
+    
+    @IBAction func btnDelClick(_ sender: AnyObject) {
+        let text = self.answerField.text
+        if !(text!.isEmpty) {
+            self.answerField.text = text?.substring(to: (text!.index(before: (text!.endIndex))))
+            if (text?.characters.count == 1) {
+                let startIndex = text?.startIndex
+                let firstLetter = text?.characters[startIndex!]
+                if (firstLetter == "-") {
+                    self.answerField.text = ""
+                }
+            }
+        }
+    }
+    
+    @IBAction func btnMinusClick(_ sender: AnyObject) {
+        let text = self.answerField.text
+        if !(text!.isEmpty) {
+            let startIndex = text?.startIndex
+            let firstLetter = text?.characters[startIndex!]
+            if (firstLetter != "-") {
+                self.answerField.text?.insert("-", at: startIndex!)
+            }
+            else {
+                self.answerField.text?.remove(at: startIndex!)
+            }
+        }
+        else {
+            self.answerField.text = "-"
+        }
+    }
+    
     @IBOutlet weak var constraintDistBetweenButtons: NSLayoutConstraint!
     @IBOutlet weak var constraintButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var topView: UIView!
@@ -50,12 +91,23 @@ class AccuracyController: UIViewController, QuestionController {
         super.viewDidLoad()
         
         let leading = (UIScreen.main.bounds.width - self.constraintButtonWidth.constant * 6 - self.constraintDistBetweenButtons.constant * 5) / 2
-        let leadingConstraint = NSLayoutConstraint(item: btnOneDigit, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
+        let leadingConstraint = NSLayoutConstraint(item: btn1, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: leading)
         
         NSLayoutConstraint.activate([leadingConstraint]) 
         self.view.layoutIfNeeded()
         self.loadQuestion(question : question)
         self.placeholder.removeFromSuperview()
+        
+        let buttons = [btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]
+        
+        for i in 0...9 {
+            buttons[i]?.touchDown = { button in
+                let text = self.answerField.text
+                if (text?.characters.count)! < 10 {
+                    self.answerField.text = text! + String(i)
+                }
+            }
+        }
     }
     
     var time = 0.0
