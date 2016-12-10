@@ -133,7 +133,14 @@ class AccuracyController: UIViewController, QuestionController {
     @IBAction func onAnswerTouch(_ sender: UIButton) {
         answer = Int(answerField.text!)!
         WebServer.sendAnswer(userAnswer: answer) { correct in
-            self.didAnswerSend(correct)
+            //self.didAnswerSend(correct)
+            
+            let name = "AccuracyResult"
+            let id = "ACCURACY_RESULT_ID"
+            
+            let storyboard = UIStoryboard(name: name, bundle: nil)
+            let ctrl = storyboard.instantiateViewController(withIdentifier: id)
+            self.present(ctrl, animated: true, completion: nil)
         }
     }
     
