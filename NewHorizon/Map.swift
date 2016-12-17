@@ -58,8 +58,12 @@ class Map {
         let regionPoses = data["region-poses"] as! Array<NSDictionary>
         let regionTypes = data["region-types"] as! Array<Int>
         let regionAreas = data["region-areas"] as! Array<Array<NSDictionary>>
-        let regionOwner = data["region-owner"] as! Array<Int>
-        
+        var regionOwner :Array<Int> = []
+        for _ in (0..<regionSizes.count) {
+            regionOwner.append(0)
+        }
+        regionOwner[0] = 1
+        regionOwner[regionOwner.endIndex - 1] = 2
         
         for i in (0..<regionSizes.count) {
             let size = regionSizes[i]
