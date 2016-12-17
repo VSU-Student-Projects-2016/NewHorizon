@@ -19,7 +19,7 @@ class WebServer {
     ]
     
     static let gameUrl = "http://diadlo.dyndns.org:8888/quiz/"
-    static let mapUrl = "http://diadlo.dyndns.org:8888/getMap/"
+    static let mapUrl = "http://diadlo.dyndns.org:8888/map/"
     static let initUrl = "http://diadlo.dyndns.org:8888/"
     static var sessionId : String = ""
     
